@@ -16,7 +16,3 @@ Start:
 ```shell
 docker-compose up
 ```
-
-## Writeup
-
-{{ challenge writeup }}
