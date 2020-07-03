@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Let's reinvent the wheel!",
+      "content": "<a href=\"https://skyrock.com/\">Skyrock blog platform</a> is too mainstream so I dicided to make my own blog using my favorite programming language.",
+      "draft": false
+    },
+    {
+      "id": "2",
+      "title": "Programming is my passion",
+      "content": "I just learn to program with <a href=\"https://www.php.net/\">PHP<a/>. Next skill to learn is security. With PHP you can set custom HTTP header, this is so cool.",
+      "draft": false
+    },
+    {
+      "id": "3",
+      "title": "Secret Flag 2",
+      "content": "FLAG-4394bca60851f3abdd85c27cd23f93a4",
+      "draft": true
+    },
+    {
+      "id": "4",
+      "title": "Cat, the king of the animal kingdom",
+      "content": "I have 4 cats at home: <i>Scooter</i>, <i>Snuggles</i>, <i>Whiskers</i> and <i>Johnny</i>.<br><b>I love cats!</b> ❤️",
+      "draft": false
+    },
+    {
+      "id": "5",
+      "title": "I thought robots were all made from metal.",
+      "content": "Today I learn something that blew my mind: <b>\"Robots are not all made from metal.\"</b> I't called Web Robots (also known as Web Wanderers, Crawlers, or Spiders).  Search engines such as Google use them to index the web content, spammers use them to scan for email addresses, and they have many other uses. <br>This sounds bad. I find a way to <a href=\"http://www.robotstxt.org/faq/prevent.html\">prevent robots scanning my site</a>.",
+      "draft": false
+    }
+  ]
+}
