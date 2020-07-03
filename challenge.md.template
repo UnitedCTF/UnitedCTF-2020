@@ -1,0 +1,22 @@
+# {{ challenge name }}
+
+> {{ challenge category }}
+
+Author: {{ challenge author GitHub handle link }}
+
+{{ challenge description }}
+
+## Setup
+
+Requirements:
+- docker
+
+Start:
+
+```shell
+docker-compose up
+```
+
+## Writeup
+
+{{ challenge writeup }}
