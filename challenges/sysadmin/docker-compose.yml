@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+    # Just build it, the ssh box should spawn them as needed
+    unitedctf-sysadmin-flag-box:
+        image: unitedctf-sysadmin-flag-box
+        build:
+            context: ./flag-box
+        hostname: unitedctf-sysadmin-flag-box
+        command: ["/bin/sh", "-c", "echo 'it works :)' && exit 0"]
+
+    unitedctf-sysadmin-ssh-box:
+        image: unitedctf-sysadmin-ssh-box
+        build:
+            context: ./ssh-box
+        hostname: unitedctf-sysadmin-ssh-box
+        init: true
+        ports:
+            - "5022:22"
+        volumes:
+            # Need to add namespaces
+            - /var/run/docker.sock:/var/run/docker.sock
