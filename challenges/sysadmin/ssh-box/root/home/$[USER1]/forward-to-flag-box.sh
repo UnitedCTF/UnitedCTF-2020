@@ -1,6 +1,8 @@
 #!/bin/bash
 
 echo "Prendre note que tout est EFFACÉ à la fin de la session"
+echo "$[FLAG1]"
+echo
 docker run -it \
     -m "$[UNITEDCTF_SYSADMIN_FLAG_BOX_MEMORY]" \
     --cpus="$[UNITEDCTF_SYSADMIN_FLAG_BOX_CPU]" \

@@ -72,3 +72,23 @@ Ce flag se trouve dans l'un des fichiers les plus visé par les LFI et les path 
 #### Solution
 
 Le flag est caché dans la description de l'utilisateur dans le fichier `/etc/passwd`
+
+### FLAG4
+
+#### Description
+
+Ce flag se trouve dans votre dossier d'utilisateur, caché à la vue de tous.
+
+#### Solution
+
+Le flag est caché dans le fichier caché `~/.flag`
+
+### FLAG5
+
+#### Description
+
+Par défaut, ubuntu utilise un umask de 002 ce qui n'est pas très "secret".
+
+#### Solution
+
+Le flag est simplement dans le fichier nommé `secret` dans le dossier du second utilisateur
