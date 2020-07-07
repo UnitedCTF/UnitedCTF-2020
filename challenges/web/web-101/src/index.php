@@ -15,7 +15,8 @@
 <body>
   <!-- This is HTML comment. -->
   <!-- Sometimes is contains important information that the programmer might have left. -->
-  <h1>My Awesome Blog</h1>
+  <!-- Secret Flag 1: FLAG-03f06d335e77ccba975315b27a5e4493 -->
+  <h1><a href="/">My Awesome Blog</a></h1>
   <p>Hi, my name is John Doe! I love cats, programming and also flags.</p>
   <hr>
   <?php if (isset($_GET['id'])) { ?>
@@ -26,14 +27,17 @@
         if ($post['id'] === $_GET['id']) {
           $title = $post['title'];
           $content = $post['content'];
+          $draft = $post['draft'];
         }
       }
     ?>
   <h2><?php echo $title ?></h2>
   <p><?php echo $content ?></p>
+  <!-- draft: <?php echo $draft ? 'true' : 'false' ?> -->
   <?php  } else { ?>
     <h2>Posts</h2>
     <ul>
+    <!-- Don't show draft post. -->
       <?php
         foreach ($data['posts'] as $post) {
           if (!$post['draft']) {
@@ -46,6 +50,5 @@
     </ul>
   <?php } ?>
   <footer>© My Awesome Blog</footer>
-  <!-- Secret Flag 1: FLAG-03f06d335e77ccba975315b27a5e4493 -->
 </body>
 </html>

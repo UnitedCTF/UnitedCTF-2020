@@ -17,20 +17,22 @@ Le premier drapeau ce trouve dans le code source HTML de la page.
 <body>
   <!-- This is HTML comment. -->
   <!-- Sometimes is contains important information that the programmer might have left. -->
-  <h1>My Awesome Blog</h1>
+  <!-- Secret Flag 1: FLAG-03f06d335e77ccba975315b27a5e4493 -->
+  <h1><a href="/">My Awesome Blog</a></h1>
   <p>Hi, my name is John Doe! I love cats, programming and also flags.</p>
   <hr>
       <h2>Posts</h2>
     <ul>
+    <!-- Don't show draft post. -->
       <li><a href='?id=1'>Let's reinvent the wheel!</a></li>
 <li><a href='?id=2'>Programming is my passion</a></li>
-<li><a href='?id=4'>Cat, the king of the animal kingdom</a></li>
+<li><a href='?id=4'>I should learn CSS</a></li>
 <li><a href='?id=5'>I thought robots were all made from metal.</a></li>
     </ul>
     <footer>© My Awesome Blog</footer>
-  <!-- Secret Flag 1: FLAG-03f06d335e77ccba975315b27a5e4493 -->
 </body>
 </html>
+
 ```
 
 ## Flag 2
@@ -43,7 +45,7 @@ Le second drapeau est accessible via l'article de blog avec l'identifiant _4_. I
 
 ```html
 <h2>Secret Flag 2</h2>
-<p>FLAG-4394bca60851f3abdd85c27cd23f93a4</p>
+<p>Nice you can change query param to access hidden stuff!<br><pre>FLAG-4394bca60851f3abdd85c27cd23f93a4</pre></p>
 ```
 
 ## Flag 3
@@ -116,7 +118,7 @@ En visitant le `/secret-stuff-only-for-admin-stuff/index.php?page=index.php` on 
 
 ```php
   // I heard this could cause a security vulnerability called: Local File Inclusion (LFI).
-  // This is way for now we can only see file in this directory.
+  // Maybe I should look into it... For now only allow files in this directory.
   // Secret Flag 5: FLAG-9fd42bed331fdbc7346c1b7a02043919
   $pages = array("index.php", "test.php");
   if (isset($_GET['page']) && in_array($_GET['page'], $pages)) {

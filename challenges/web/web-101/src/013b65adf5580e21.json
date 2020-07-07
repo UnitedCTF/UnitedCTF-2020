@@ -3,25 +3,25 @@
     {
       "id": "1",
       "title": "Let's reinvent the wheel!",
-      "content": "<a href=\"https://skyrock.com/\">Skyrock blog platform</a> is too mainstream so I dicided to make my own blog using my favorite programming language.",
+      "content": "<i>Skyrock blog platform</i> is too mainstream so I dicided to make my own blog using my favorite programming language.",
       "draft": false
     },
     {
       "id": "2",
       "title": "Programming is my passion",
-      "content": "I just learn to program with <a href=\"https://www.php.net/\">PHP<a/>. Next skill to learn is security. With PHP you can set custom HTTP header, this is so cool.",
+      "content": "I just learn to program with <a href=\"https://www.php.net/\">PHP<a/>. Did you know that you can set custom HTTP header with PHP using the <a href=\"https://www.php.net/manual/en/function.header.php\">header</a> function? <br>Ex:<br><pre>header(\"X-Custom-Header-Name: value\");</pre><br>It's so cool I should try I out for my blog.",
       "draft": false
     },
     {
       "id": "3",
       "title": "Secret Flag 2",
-      "content": "FLAG-4394bca60851f3abdd85c27cd23f93a4",
+      "content": "Nice you can change query param to access hidden stuff!<br><pre>FLAG-4394bca60851f3abdd85c27cd23f93a4</pre>",
       "draft": true
     },
     {
       "id": "4",
-      "title": "Cat, the king of the animal kingdom",
-      "content": "I have 4 cats at home: <i>Scooter</i>, <i>Snuggles</i>, <i>Whiskers</i> and <i>Johnny</i>.<br><b>I love cats!</b> ❤️",
+      "title": "I should learn CSS",
+      "content": "I should really learn <b>CSS</b> This site is horrible without it.",
       "draft": false
     },
     {

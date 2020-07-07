@@ -26,7 +26,7 @@
     <!-- Example: ?page=test.php -->
   <?php
   // I heard this could cause a security vulnerability called: Local File Inclusion (LFI).
-  // This is way for now we can only see file in this directory.
+  // Maybe I should look into it... For now only allow files in this directory.
   // Secret Flag 5: FLAG-9fd42bed331fdbc7346c1b7a02043919
   $pages = array("index.php", "test.php");
   if (isset($_GET['page']) && in_array($_GET['page'], $pages)) {
