@@ -10,7 +10,6 @@ echo
 docker run -it \
     -m "$[UNITEDCTF_SYSADMIN_FLAG_BOX_MEMORY]" \
     --cpus="$[UNITEDCTF_SYSADMIN_FLAG_BOX_CPU]" \
-    --storage-opt size=$[UNITEDCTF_SYSADMIN_FLAG_BOX_DISK] \
     -u "$1" \
     -w "/home/$1" \
     --rm "unitedctf-sysadmin-$1"

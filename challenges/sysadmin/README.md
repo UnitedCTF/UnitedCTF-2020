@@ -92,3 +92,17 @@ Par défaut, ubuntu utilise un umask de 002 ce qui n'est pas très "secret".
 #### Solution
 
 Le flag est simplement dans le fichier nommé `secret` dans le dossier du second utilisateur
+
+### FLAG6
+
+#### Description
+
+Quand il y a trop de fichiers il faut absolument globally search for a regular expression and print matching pour éviter de devenir fou.
+
+#### Solution
+
+Le flag est dans l'un des fichiers de code source
+
+```bash
+grep -R FLAG- .
+```

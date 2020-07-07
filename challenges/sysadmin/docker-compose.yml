@@ -34,6 +34,14 @@ services:
         depends_on:
             - unitedctf-sysadmin-ssh
 
+    unitedctf-sysadmin-flag6:
+        image: unitedctf-sysadmin-flag6
+        build:
+            context: ./flag6
+        command: ["/bin/sh", "-c", "echo 'flag6 works' && exit 0"]
+        depends_on:
+            - unitedctf-sysadmin-ssh
+
     unitedctf-sysadmin-ssh:
         image: unitedctf-sysadmin-ssh
         build:
