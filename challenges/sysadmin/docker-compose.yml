@@ -2,18 +2,43 @@ version: "3.8"
 
 services:
     # Just build it, the ssh box should spawn them as needed
-    unitedctf-sysadmin-flag-box:
-        image: unitedctf-sysadmin-flag-box
+    unitedctf-sysadmin-flag2:
+        image: unitedctf-sysadmin-flag2
         build:
-            context: ./flag-box
-        hostname: unitedctf-sysadmin-flag-box
-        command: ["/bin/sh", "-c", "echo 'it works :)' && exit 0"]
+            context: ./flag2
+        command: ["/bin/sh", "-c", "echo 'flag2 works' && exit 0"]
+        depends_on:
+            - unitedctf-sysadmin-ssh
 
-    unitedctf-sysadmin-ssh-box:
-        image: unitedctf-sysadmin-ssh-box
+    unitedctf-sysadmin-flag3:
+        image: unitedctf-sysadmin-flag3
         build:
-            context: ./ssh-box
-        hostname: unitedctf-sysadmin-ssh-box
+            context: ./flag3
+        command: ["/bin/sh", "-c", "echo 'flag3 works' && exit 0"]
+        depends_on:
+            - unitedctf-sysadmin-ssh
+
+    unitedctf-sysadmin-flag4:
+        image: unitedctf-sysadmin-flag4
+        build:
+            context: ./flag4
+        command: ["/bin/sh", "-c", "echo 'flag4 works' && exit 0"]
+        depends_on:
+            - unitedctf-sysadmin-ssh
+
+    unitedctf-sysadmin-flag5:
+        image: unitedctf-sysadmin-flag5
+        build:
+            context: ./flag5
+        command: ["/bin/sh", "-c", "echo 'flag5 works' && exit 0"]
+        depends_on:
+            - unitedctf-sysadmin-ssh
+
+    unitedctf-sysadmin-ssh:
+        image: unitedctf-sysadmin-ssh
+        build:
+            context: ./ssh
+        hostname: unitedctf-sysadmin-ssh
         init: true
         ports:
             - "5022:22"
