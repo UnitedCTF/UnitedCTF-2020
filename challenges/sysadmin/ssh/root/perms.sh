@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+chown root:root /etc
+
 chown -R root:root /etc/ssh
 chmod 600 /etc/ssh/ssh_host*
 

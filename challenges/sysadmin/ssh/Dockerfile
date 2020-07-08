@@ -22,9 +22,9 @@ RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubunt
 RUN apt install -y docker-ce
 
 COPY --from=build /app/build/root /
-RUN chmod +x /*.sh
+RUN chmod +x /*.sh && chown root:root /*.sh 
 
 RUN groupadd spawner
 
-RUN sh < /perms.sh
+RUN sh < /perms.sh && rm /perms.sh
 ENTRYPOINT [ "/entrypoint.sh" ]
