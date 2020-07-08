@@ -1,0 +1,12 @@
+# http://www.robotstxt.org/
+# This is to prevent bad web robots to scan my blog.
+
+User-agent: *
+
+Allow: index.php
+
+# I don't want my flags to be indexed in search engines.
+Disallow: /this-is-the-secret-flag-3.txt
+
+# Hide the admin page.
+Disallow: /secret-stuff-only-for-admin-stuff/index.php
