@@ -29,6 +29,8 @@ Tous les messages du serveur sont au format JSON. Le message contenant les donn�
 }
 ```
 
+NOTE: Le champ `data` aura toujours une longueur d'un multiple de 16. Vous n'avez donc pas à vous soucier d'implémenter un padding quelconque.
+
 ATTENTION: notez que le champ data contient une string normale si l'opération est "encrypt", et une string *hexadécimale* si l'opération est "decrypt". Vous devrez donc décoder les données avant de faire l'opération de déchiffrement.
 
 Pour envoyer le résultat de votre opération, envoyez la string en clair s'il s'agit d'un déchiffrement, et envoyez la string hexadécimale s'il s'agit d'un chiffrement. Pseudocode:
