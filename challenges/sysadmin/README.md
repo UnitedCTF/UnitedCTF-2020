@@ -106,3 +106,17 @@ Le flag est dans l'un des fichiers de code source
 ```bash
 grep -R FLAG- .
 ```
+
+### FLAG7
+
+#### Description
+
+Parfois, il être capable d'impersonifier d'autres utilisateurs pour exécuter d'autres commandes sans compromettre la sécurité une machine.
+
+#### Solution
+
+Le flag se trouve dans le dossier d'un autre utilisateur et il faut utiliser sudo pour y avoir accès
+
+```bash
+sudo -u superuser /home/superuser/secret.sh
+```

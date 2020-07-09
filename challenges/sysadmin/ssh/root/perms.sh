@@ -39,3 +39,6 @@ echo flag5:$[FLAG4] | chpasswd
 
 useradd -M -G spawner -d /tmp -s /forward-to-docker.sh flag6
 echo flag6:$[FLAG5] | chpasswd
+
+useradd -M -G spawner -d /tmp -s /forward-to-docker.sh flag7
+echo flag7:$[FLAG6] | chpasswd
