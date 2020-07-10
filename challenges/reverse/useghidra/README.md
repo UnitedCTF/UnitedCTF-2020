@@ -18,17 +18,17 @@ Requirements:
 
 # Writeup
 
-La fonction main contient un message. On clique dessus et un indice révèle qu'il manquerait un appel de fonction. 
+La fonction `main` contient un message. On clique dessus et un indice révèle qu'il manquerait un appel de fonction. 
 
 ![image](https://user-images.githubusercontent.com/6194072/87111585-b1312800-c237-11ea-96d6-1c023322a652.png)
 
-En explorant le binaire, on trouve la fonction "fun_03919" qui fait quelque chose d'intéressant. Il y a deux tableau sur la stack. 
+En explorant le binaire, on trouve la fonction `fun_03919` qui fait quelque chose d'intéressant. Il y a deux tableaux sur la stack. 
 
 `local_48` et `local_28`. Quand on regarde les deux tableaux, ils ont chacun 24 nombres qui leur sont assignés. 
 
 ![image](https://user-images.githubusercontent.com/6194072/87111470-7202d700-c237-11ea-8c90-013368a2d568.png)
 
-Plus loin dans la fonction, on voit une boucle qui itère sur les tableaux et additionnent les nombres. 
+Plus loin dans la fonction, on voit une boucle qui itère sur les tableaux et additionne les nombres. 
 
 ![image](https://user-images.githubusercontent.com/6194072/87111655-dde53f80-c237-11ea-9e0c-b777141b62d0.png)
 

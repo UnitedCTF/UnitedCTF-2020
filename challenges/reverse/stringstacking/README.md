@@ -6,7 +6,7 @@ Author: [Alexandre-Xavier Labonté-Lamoureux (AXDOOMER)](https://github.com/axdo
 
 Essayez de trouver la solution à ce binaire en utilisant Ghidra.
 
-Le décompilateur de Ghidra est très utile pour voir ce que le programme fait. Essayez de vous aider à l'aide du désassembleur.
+Le décompilateur de Ghidra est très utile pour voir ce que le programme fait, mais le code décompilé n'est pas toujours facile à comprendre. Essayez de vous aider à l'aide du désassembleur.
 
 ## Setup
 

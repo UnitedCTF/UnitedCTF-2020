@@ -18,7 +18,7 @@ Requirements:
 
 # Writeup
 
-On exécute l'utilitaire `strings` sur le programme. On peut voir le flag dans notre terminal. 
+On exécute l'utilitaire `strings` sur le binaire. On peut voir le flag dans notre terminal. 
 
 `flag-4lw4y5Run5tr1ng5f1rs7`
 
