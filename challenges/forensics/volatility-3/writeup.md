@@ -10,4 +10,4 @@ volatility screenshot -f /path/to/volatile_mem.dmp -D /output/path/for/screensho
 
 ![Vue en wireframe du desktop](./desktop.png)
 
-`FLAG-L3sP4roL35S'Env0L3n7_186dq489`
+`CPoHdVcQMvTcjSSvVuo`
