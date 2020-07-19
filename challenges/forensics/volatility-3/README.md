@@ -4,15 +4,14 @@
 
 Author: @CycleOfTheAbsurd
 
-Y'a une personne louche qui a joué avec ma machine virtuelle. Aidez-moi à retrouver les flags qui ont été laissés dessus.
+Voir `Mémoire Volatile 1` pour l'outil à utiliser et le fichier de dump mémoire.
 
-Utilisez le même fichier que pour Mémoire Volatile 1.
+Note: Les flags ne sont __pas__ au format `FLAG-.*`
 
-Les flags ne sont __pas__ au format `FLAG-.*`
+Tel que mentionné dans la description du premier défi, un dump mémoire contient les fenêtres ouvertes ainsi que l'état du _Desktop_.
 
-p.s. l'outil Volatility risque d'être très utile.
 
-Défi #3: Le flag est le titre de la fenêtre `paint` ouverte sur le desktop (sans le " - Paint")
+Défi #3: Le flag est le titre de la fenêtre `paint` qui ouverte sur le _desktop_ (sans la partie " - Paint")
 
 
 ## Setup

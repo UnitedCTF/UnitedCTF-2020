@@ -4,15 +4,14 @@
 
 Author: @CycleOfTheAbsurd
 
-Y'a une personne louche qui a joué avec ma machine virtuelle. Aidez-moi à retrouver les flags qui ont été laissés dessus.
+Voir `Mémoire Volatile 1` pour l'outil à utiliser et le fichier de dump mémoire.
 
-Utilisez le même fichier que pour Mémoire Volatile 1.
+Note: Les flags ne sont __pas__ au format `FLAG-.*`
 
-Les flags ne sont __pas__ au format `FLAG-.*`
+Un dump mémoire contient aussi les fichiers présentement chargés en mémoire. Comme ceux qui sont utilisés par des programmes en cours d'exécution.
 
-p.s. l'outil Volatility risque d'être très utile
 
-Défi #4: Le flag est le contenu d'un fichier .rtf actuellement ouvert dans wordpad.
+Défi #4: Le flag est le contenu du fichier `.rtf` actuellement ouvert dans `wordpad`.
 
 
 ## Setup

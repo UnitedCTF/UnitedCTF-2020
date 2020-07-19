@@ -4,15 +4,14 @@
 
 Author: @CycleOfTheAbsurd
 
-Y'a une personne louche qui a joué avec ma machine virtuelle. Aidez-moi à retrouver les flags qui ont été laissés dessus.
+Voir `Mémoire Volatile 1` pour l'outil à utiliser et le fichier de dump mémoire.
 
-Utilisez le même fichier que Mémoire Volatile 1.
+Note: Les flags ne sont __pas__ au format `FLAG-.*`
 
-Les flags ne sont __pas__ au format `FLAG-.*`
+Lorsque l'on copie quelque chose, la donnée est stockée dans le _clipboard_ (presse-papier en français, mais personne n'utilise ce nom là). Le _clipboard_ est tout simplement une zone de mémoire dans la RAM qui est utilisée par les fonctionnalités Copier, Couper et Coller.
 
-p.s. l'outil Volatility risque d'être très utile.
 
-Défi #2: J'avais copié un flag juste avant que l'individu louche arrive
+Défi #2: Le flag est le contenu du _presse-papier_.
 
 
 ## Setup
