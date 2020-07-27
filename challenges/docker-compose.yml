@@ -1,0 +1,7 @@
+version: "3"
+services:
+    aes-ctr:
+        build: ./crypto/aes-ctr
+        restart: on-failure
+        ports:
+            - 3001:3000
