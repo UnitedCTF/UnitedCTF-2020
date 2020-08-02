@@ -10,6 +10,8 @@ Le décompilateur de Ghidra est très utile pour voir ce que le programme fait. 
 
 Ceci pourra vous aider: http://xor.pw/
 
+Notez qu'il y a une difficulté supplémentaire à ce défi. Ghidra ne décompilera pas le programme de manière optimale. Vous pouvez changer les types de variables pour que Ghidra génère du code plus compréhensible.
+
 ## Setup
 
 Requirements:
