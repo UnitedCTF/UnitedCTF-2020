@@ -10,13 +10,13 @@ Dans cette série de défis, vous devrez utiliser cet outil pour récupérer les
 
 Dans le protocole TCP les participants assignent des [numéros de séquence](https://packetlife.net/blog/2010/jun/7/understanding-tcp-sequence-acknowledgment-numbers/) à chacun des paquets transmis. Ceux-ci sont utiles pour vérifier qu'aucun paquet n'a été perdu en transit.
 
-Le protocol HTTP utilise TCP comme couche de transport. Ce n'est pas nécessaire pour ce défi, mais vous pouvez lire l'article sur le [Modèle OSI](https://fr.wikipedia.org/wiki/Mod%C3%A8le_OSI) si vous voulez en apprendre plus sur les couches réseaux.
+Le protocol HTTP utilise TCP comme couche de transport. Ce n'est pas nécessaire pour ce défi, mais vous pouvez lire l'article sur le [TCP/IP](https://www.cloudflare.com/learning/ddos/glossary/tcp-ip/) si vous voulez en apprendre plus sur le protocole TCP.
 
-Dans le protocole HTTP (celui qui est utilisé pour accéder à des pages web), le serveur retourne un [code de statut](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) avec chaque réponse afin d'indiquer si la requête a été complétée correctement et pour fournir des informations par rapport à ce résultat.
+Dans le protocole HTTP (celui qui est utilisé pour accéder à des pages web), le serveur retourne un [code de statut](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) avec chaque réponse afin d'indiquer si la requête a été complétée correctement et pour fournir des informations par rapport à ce résultat. Par exemple, le code 500, que vous avez peut-être déjà rencontré, signifie qu'il y a eu une erreur au niveau du serveur.
 
 Note: Ce flag n'est __pas__ au format `FLAG-.*`
 
-Défi #2: Dans la capture, une requête envoyée au serveur `united-ctf.can` s'est résultée en une erreur parce que la page n'a pas pu être trouvée. Quel est le numéro de séquence de la requête qui a causé cette erreur?
+Défi #2: Dans la capture, une requête envoyée au serveur `united-ctf.can:8080` s'est résultée en une erreur parce que la page n'a pas pu être trouvée. Quel est le numéro de séquence de la requête qui a causé cette erreur?
 
 
 ## Setup
