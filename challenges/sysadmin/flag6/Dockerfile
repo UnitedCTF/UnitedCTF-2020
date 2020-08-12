@@ -8,15 +8,7 @@ COPY --chown=node:node . /app
 
 RUN node build.js ./root
 
-FROM ubuntu:18.04
-
-RUN apt update
-RUN apt install -y \
-    netcat net-tools \
-    python python3 \
-    build-essential \
-    sudo bash-completion curl wget htop \
-    nano vim man git
+FROM unitedctf-sysadmin-base
 
 RUN git clone https://github.com/vuejs/vue --depth=1 /repos/vue
 RUN rm -rf /repos/vue/.git

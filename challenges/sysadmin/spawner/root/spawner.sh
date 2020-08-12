@@ -11,6 +11,7 @@ echo
 docker run -it \
     -m "$[UNITEDCTF_SYSADMIN_FLAG_BOX_MEMORY]" \
     --cpus="$[UNITEDCTF_SYSADMIN_FLAG_BOX_CPU]" \
+    --init \
     -u "$1" \
     -w "/home/$1" \
     --rm "unitedctf-sysadmin-$1" 2>/dev/null

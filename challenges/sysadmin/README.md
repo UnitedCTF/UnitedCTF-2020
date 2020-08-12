@@ -120,3 +120,18 @@ Le flag se trouve dans le dossier d'un autre utilisateur et il faut utiliser sud
 ```bash
 sudo -u superuser /home/superuser/secret.sh
 ```
+
+### FLAG8
+
+#### Description
+
+Certaines commandes administratives peuvent être très utiles pour déboguer et observer le comportement d'un programme.
+
+#### Solution
+
+Le flag est envoyé chaque seconde au binaire `/keyrecv`. Il est possible de le récupérer en utilisant la commande `strace`
+
+```bash
+# Le PID va changer, mais il devrait être proche de 9
+strace -p <PID de /keyrecv>
+```

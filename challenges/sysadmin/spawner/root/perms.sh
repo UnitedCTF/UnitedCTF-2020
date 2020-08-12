@@ -39,3 +39,6 @@ chown -R flag6:flag6 /home/flag6
 
 useradd -M -G spawner -d /home/flag7 -s /forward-to-docker.sh flag7
 chown -R flag7:flag7 /home/flag7
+
+useradd -M -G spawner -d /home/flag8 -s /forward-to-docker.sh flag8
+chown -R flag8:flag8 /home/flag8
