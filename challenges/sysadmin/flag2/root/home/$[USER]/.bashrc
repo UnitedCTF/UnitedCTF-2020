@@ -2,6 +2,10 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# Remove idle/dead sessions after 3 mins
+export TMOUT=${TMOUT:-180}
+readonly TMOUT
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
