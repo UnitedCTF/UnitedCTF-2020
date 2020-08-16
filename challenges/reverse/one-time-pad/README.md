@@ -38,7 +38,7 @@ Le code de validation devient plus facile à lire.
 
 ![image](https://user-images.githubusercontent.com/6194072/88618315-cd6dfb00-d066-11ea-8e94-276e362861c2.png)
 
-Il reste toujours un tableau et c'est celui composé de zéros. Ce sont cinq variables de type `undefined8`, donc `5 x 8 = 40`. C'est un tableau de 40 bytes. On peut confirmer sa taille en regardant la fonction `isoc99_scanf` pour voir si elle limite le nombre de caractères lus. Si on regarde le contenu de `DAT_00102029`, on voit `%39s`, ce qui indique à `scanf` d'effectuer la lectrue de 39 caractères. Cela laisse assez de place pour insérer la valeur `null` après la string pour éviter des bugs de dépassement de tampon. 
+Il reste toujours un tableau et c'est celui composé de zéros. Ce sont cinq variables de type `undefined8`, donc `5 x 8 = 40`. C'est un tableau de 40 bytes. On peut confirmer sa taille en regardant la fonction `isoc99_scanf` pour voir si elle limite le nombre de caractères lus. Si on regarde le contenu de `DAT_00102029`, on voit `%39s`, ce qui indique à `scanf` d'effectuer la lecture de 39 caractères. Cela laisse assez de place pour insérer la valeur `null` après la string pour éviter des bugs de dépassement de tampon. 
 
 Après avoir corrigé le type du dernier tableau, le code devient beaucoup plus clair. Il ne reste plus qu'à renommer les variables pour plus de clarté. 
 
