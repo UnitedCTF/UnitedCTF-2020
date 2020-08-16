@@ -20,7 +20,7 @@ Requirements:
 
 En examinant le code du programme, on remarque un appel aux fonctions `sleep` et `usleep`. Cela nous indique que la vitesse du programme est ralentie, car ces fonctions imposent un délai à l'exécution du code. 
 
-En se renseignant sur `LD_PRELOAD`, on apprend qu'il s'agit d'un truc pour [charger les fonctions d'une bibliothèque avant celles d'une autre](https://stackoverflow.com/a/426260). En cherchant le rapport avec les fonctions sleep, on trouve [https://stackoverflow.com/a/9302942](un moyen de les remplacer pour nullifier leur comportement).
+En se renseignant sur `LD_PRELOAD`, on apprend qu'il s'agit d'un truc pour [charger les fonctions d'une bibliothèque avant celles d'une autre](https://stackoverflow.com/a/426260). En cherchant le rapport avec les fonctions sleep, on trouve [un moyen de les remplacer pour nullifier leur comportement](https://stackoverflow.com/a/9302942).
 
 On implémente donc nos fonctions de remplacement en vue d'utiliser ce truc.
 
