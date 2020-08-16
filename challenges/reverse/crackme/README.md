@@ -61,7 +61,7 @@ On peut maintenant commencer à chercher le mot de passe.
 
 Cette première condition s'assure que les trois éléments attendus ont été lus. 
 
-Pour retrouver la valeur de `decimal`, on doit reverse l'ordre des opérations. On obtiendra donc `(0x98000 >> 2) ^ 0x17337`, ce qui donne la valeur décimale `201527`.
+Pour retrouver la valeur de `decimal`, on doit inverser l'ordre des opérations. On obtiendra donc `(0x98000 >> 2) ^ 0x17337`, ce qui donne la valeur décimale `201527`.
 
 ![image](https://user-images.githubusercontent.com/6194072/89107755-322bab80-d401-11ea-9342-9857c83c2b74.png)
 
