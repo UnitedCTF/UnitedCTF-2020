@@ -14,18 +14,24 @@ if __name__ == '__main__':
     while True:
         print("""ECB Crypto Menu
 1. Encrypt flag
-2. Exit
+2. Encrypt flag (hex name)
+3. Exit
 """)
         choice = input("> Your choice: ").strip()
 
-        if choice not in "12" or choice == "":
+        if choice not in "123" or choice == "":
             print("Invalid choice.")
             continue
 
+        if choice == "1":
+            name = input("> Please enter your name: ").encode()
+        
         if choice == "2":
+            name = bytes.fromhex(input("> Please enter your name (hex format): "))
+
+        if choice == "3":
             print("Goodbye!")
             break
         
-        name = input("> Please enter your name: ")
-        data = f"{name}{flag.flag}"
-        print(f"Result: {aes.encrypt(pad(data.encode(), 16)).hex()}")
+        data = name + flag.flag.encode()
+        print(f"Result: {aes.encrypt(pad(data, 16)).hex()}")
