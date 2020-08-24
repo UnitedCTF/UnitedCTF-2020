@@ -27,7 +27,7 @@ T h e Q u i c k B r o w n F o x  T h e Q u i c k B r o w n F o x  (bloc vide)
 
 > [Lien CyberChef](https://gchq.github.io/CyberChef/#recipe=AES_Encrypt(%7B'option':'UTF8','string':'alloalloalloallo'%7D,%7B'option':'Hex','string':''%7D,'ECB','Raw','Hex')&input=VGhlUXVpY2tCcm93bkZveFRoZVF1aWNrQnJvd25Gb3g)
 
-Comme vous pouvez le voir, les deux premiers blocs sont identiques, car ils ont un _plaintext_ différent.
+Comme vous pouvez le voir, les deux premiers blocs sont identiques, car ils ont un _plaintext_ identique.
 
 Si on chiffre cette fois `TheQuickBrownFoxTheSlowOrangeCat`, le résultat est:
 
