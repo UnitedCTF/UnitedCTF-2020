@@ -1,18 +1,4 @@
 # Writeup
-## Note sur le padding
-Tout d'abord, une note sur le padding. Puisque AES fonctionne par blocs de 16 caractères, il est nécessaire d'ajouter du padding pour remplir les données avant de les chiffrer si leur taille n'est pas un multiple de 16. Le padding est ajouté comme suit: si le bloc est plus petit que 16, on remplit le reste de l'espace avec une valeur d'octet correspondant au nombre de bytes manquant. Par exemple, pour 12 bytes, le padding serait 4 bytes valant `\x04`, puisqu'il manque 4 bytes pour arriver à 16:
-
-```
-ABCDEFGHIJKL\x04\x04\x04\x04
-```
-
-Dans le cas où on utilise la fonction de padding sur des données dont la taille est déjà un multiple de 16 bytes, un bloc complet de padding sera ajouté avec la valeur `\x10` (16 en hexadécimal):
-
-```
-<--  BLOC 1  --> <--------------------------  BLOC 2  -------------------------->
-ABCDEFGHIJKLMNOP \x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10\x10
-```
-
 ## Pour trouver la longueur du flag
 On peut trouver la longueur du flag en entrant des noms de plus en plus longs et en regardant la taille du ciphertext. Tout d'abord, en entrant un nom vide, on peut avoir une idée de la longueur. Dans ce cas, le serveur nous retourne un ciphertext de 32 caractères (2 blocs AES). Donc, on peut en déduire que sa taille se trouve entre 16 et 31 (car avec 32 caractères, il y aurait un troisième bloc contenant uniquement du padding). Ensuite, on peut ajouter un caractère à notre nom et rechiffrer le flag, jusqu'à ce qu'on remplisse les deux premiers blocs AES. Nous saurons quand les deux premiers blocs seront remplis car nous verrons apparaître un troisième bloc (dont le plaintext sera uniquement du padding). Une fois qu'on a un troisième bloc, on trouve la longueur exacte du flag en calculant `32 - longueur du nom % 16`.
 
