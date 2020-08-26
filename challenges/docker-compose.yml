@@ -11,3 +11,9 @@ services:
         restart: on-failure
         ports:
             - 3001:3000
+
+    aes-ecb-cut-paste:
+        build: ./crypto/aes-ecb-cut-paste
+        restart: on-failure
+        ports:
+            - 3002:3000
