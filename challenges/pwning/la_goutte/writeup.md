@@ -7,29 +7,30 @@ En ouvrant le programme dans `gdb`, on peut voir l'état de la _stack_, pour obs
 Dans l'exemple suivant, j'ai entré "TESTEST" comme nom. Voici la _stack_ près l'appel à `gets`:
 
 ```
-gef➤  x/16wx $rsp
-
-0x7fffffffd9c0: 0x54534554      0x00545345      0xf7e29ba5      0x00007fff
-0x7fffffffd9d0: 0x00000000      0x00000000      0xffffda10      0x00000004
-0x7fffffffd9e0: 0x42060000      0x00000002      0xffffffff      0x00000005
+gef➤  x/12wx $rsp
+0x7fffffffd9d0: 0x54534554      0x00545345      0xf7e29ba5      0x00007fff
+0x7fffffffd9e0: 0x00000004      0x42060000      0xae147ae1      0x406f8147
+0x7fffffffd9f0: 0xffffffff      0xffffffff      0x00000000      0x00000005
 // emplacement de $rbp
 ```
+
+Remarquez que l'espace restant après le byte NUL (0x00) qui reste de terminateur de chaîne de caractère contient une valeur qui semble être une addresse. Ceci est simplement dû au fait que la mémoire n'est pas toujours réinitialisée sauf si on le fait explicitement. Comme une _string_ est terminée par un byte NUL, ce qui se trouve après celui-ci ne sera pas considéré.
 
 En utilisant la taille de chacun des types ainsi que les valeurs connues des variables, on peut faire une représentation visuelle de la pile comme ceci:
 
 ```
-                | 16 bytes                     |
-                |  8 bytes     |  8 bytes      |
-                |  4   | 4     |  4   |  4     |
-                |------------------------------|
-                |------------------------------|
-0x7fffffffd9c0  | qui                          |
-                |------------------------------|
-0x7fffffffd9d0  | <padding>           |quand   |
-                |------------------------------|
-0x7fffffffd9e0  | ou   |comment| quoi |pourquoi|
-                |------------------------------|
-0x7fffffffd9f0  | <Base de la frame actuelle de pile> ($rbp)
+                | 16 bytes                         |
+                |  8 bytes      |  8 bytes         |
+                |  4    | 4     |   4    |  4      |
+                |----------------------------------|
+                |----------------------------------|
+0x7fffffffd9d0  | qui                              |
+                |----------------------------------|
+0x7fffffffd9e0  | quand | ou    | comment          |
+                |----------------------------------|
+0x7fffffffd9f0  | quoi          |padding | pourquoi|
+                |----------------------------------|
+0x7fffffffda00  | <Base de la frame actuelle de pile> ($rbp)
 ```
 
 Notez que les addresses données dans l'exemple vont varier pour chaque machine et chaque exécution. Ceci n'est pas un problème.

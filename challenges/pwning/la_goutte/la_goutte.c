@@ -9,8 +9,8 @@
 
 void degoutte() {
 	volatile int pourquoi = 5;
-	volatile int quoi = -1;
-	volatile int comment = 2;
+	volatile long quoi = -1;
+	volatile double comment = 252.04;
 	volatile float ou = 33.5;
 	volatile int quand = 4;
 	char qui[16];
@@ -26,7 +26,7 @@ void degoutte() {
 
 int main(int argc, char* argv[]) {
 	setvbuf(stdin, NULL, _IONBF, 0);
-    setvbuf(stdout, NULL, _IONBF, 0);
+	setvbuf(stdout, NULL, _IONBF, 0);
 	setvbuf(stderr, NULL, _IONBF, 0);
 	degoutte();
 	return 0;
