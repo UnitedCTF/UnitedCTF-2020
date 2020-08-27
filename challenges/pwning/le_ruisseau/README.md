@@ -4,7 +4,7 @@
 
 Author: @CycleOfTheAbsurd
 
-Lorsque l'on effectue un appel de fonction dans un programme compilé, l'adresse de l'exécution suivant cette appel est mise sur la stack (par l'instruction [`CALL`](https://www.felixcloutier.com/x86/call)). Celle-ci est ensuite utilisée comme adresse de retour (par l'instruction [`RET`](https://www.felixcloutier.com/x86/ret)) pour continuer le flux d'exécution en assignant le pointeur d'instruction RIP à cette valeur.
+Lorsque l'on effectue un appel de fonction dans un programme compilé, l'adresse de l'exécution suivant cet appel est mise sur la stack (par l'instruction [`CALL`](https://www.felixcloutier.com/x86/call)). Celle-ci est ensuite utilisée comme adresse de retour (par l'instruction [`RET`](https://www.felixcloutier.com/x86/ret)) pour continuer le flux d'exécution en assignant le pointeur d'instruction RIP à cette valeur.
 
 _Note_: Le fonctionnement des appels de fonctions et retours est différent dans certaines architectures de processeur autres que x86 et x86-64, mais ceci est hors de portée du présent challenge et ne nous importe pas ici.
 
