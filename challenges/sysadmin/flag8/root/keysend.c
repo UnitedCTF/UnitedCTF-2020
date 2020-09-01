@@ -29,7 +29,7 @@ int main() {
     }
 
     char* flag = "$[FLAG]";
-    write(sockfd, flag, sizeof(flag));
+    write(sockfd, flag, sizeof(flag)*8);
 
     char buff[32];
     read(sockfd, buff, sizeof(buff));
