@@ -21,13 +21,10 @@ _Note_: Pour ce challenge, nous avons désactivé certaines protections mémoire
 ## Setup
 
 Requirements:
-- `make`
-- `gcc`
 - `docker-compose`
 
 Start:
 
 ```
-make all
 docker-compose up le_lac_pwn
 ```
