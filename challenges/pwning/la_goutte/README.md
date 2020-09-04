@@ -20,13 +20,10 @@ _Note_: utilisez `netcat` pour vous y connecter
 ## Setup
 
 Requirements:
-- `make`
-- `gcc`
 - `docker-compose`
 
 Start:
 
 ```
-make all
 docker-compose up la_goutte_pwn
 ```
