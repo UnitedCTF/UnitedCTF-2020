@@ -1,0 +1,9 @@
+service aesecbbyteperbyte
+{
+  type = unlisted
+  protocol = tcp
+  wait = no
+  port = 3000
+  user = challenge
+  server = /app/server.py
+}
