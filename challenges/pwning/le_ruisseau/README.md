@@ -22,13 +22,10 @@ _Note_: utilisez `netcat` pour vous y connecter
 ## Setup
 
 Requirements:
-- `make`
-- `gcc`
 - `docker-compose`
 
 Start:
 
 ```
-make all
 docker-compose up le_ruisseau_pwn
 ```
