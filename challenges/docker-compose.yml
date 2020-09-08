@@ -23,3 +23,16 @@ services:
         restart: on-failure
         ports:
             - 3002:3000
+
+    le_lac_pwn:
+        build: ./pwning/le_lac
+        image: le_lac_pwn
+        volumes:
+            - ./pwning/le_lac/le_lac:/home/lac/le_lac:ro
+            - ./pwning/le_lac/xinetd:/etc/xinetd.d/xinetd:ro
+            - ./pwning/le_lac/flag:/flag:ro
+        ports:
+            - 17002:8888
+        ulimits:
+            nprocs: 2048
+        restart: unless-stopped
