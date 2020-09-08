@@ -23,3 +23,9 @@ services:
         restart: on-failure
         ports:
             - 3002:3000
+    
+    init-socket:
+        build: ./programming/init-socket
+        restart: on-failure
+        ports:
+            - 3004:3000
