@@ -66,5 +66,33 @@ services:
         ports:
             - 17002:8888
         ulimits:
-            nprocs: 2048 
+            nproc: 2048
         restart: unless-stopped
+
+    sqli_database:
+        build:
+            context: ./web/sqli/sqli_db/
+        env_file:
+            - ./web/sqli/sqli_db/.env
+            - ./web/sqli/sqli_db/db.env
+        restart: unless-stopped
+        networks:
+            - sqli-net
+
+    sqli_web:
+        build: ./web/sqli/sqli_website/
+        depends_on:
+            - sqli_database
+        ports:
+            - 18000:80
+        volumes:
+            - "./web/sqli/sqli_website/src:/var/www/html"
+        env_file: ./web/sqli/sqli_db/.env
+        environment:
+            DB_HOST: sqli_database
+        restart: unless-stopped
+        networks:
+            - sqli-net
+
+networks:
+    sqli-net:
