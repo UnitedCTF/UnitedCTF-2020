@@ -17,3 +17,15 @@ services:
         restart: on-failure
         ports:
             - 3002:3000
+
+    le_ruisseau_pwn:
+        build: ./pwning/le_ruisseau/
+        image: le_ruisseau_pwn
+        volumes:
+            - ./pwning/le_ruisseau/le_ruisseau:/home/ruisseau/le_ruisseau:ro
+            - ./pwning/le_ruisseau/xinetd:/etc/xinetd.d/xinetd:ro
+        ports:
+            - 17001:8888
+        ulimits:
+            nprocs: 2048
+        restart: unless-stopped
