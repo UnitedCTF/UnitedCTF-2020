@@ -24,6 +24,17 @@ services:
         ports:
             - 3002:3000
 
+    la_goutte_pwn:
+        build: ./pwning/la_goutte
+        image: la_goutte_pwn
+        volumes:
+            - ./pwning/la_goutte/la_goutte:/home/goutte/la_goutte:ro
+            - ./pwning/la_goutte/xinetd:/etc/xinetd.d/xinetd:ro
+        ports:
+            - 17000:8888
+        ulimits:
+            nproc: 2048
+
     le_ruisseau_pwn:
         build: ./pwning/le_ruisseau/
         image: le_ruisseau_pwn
@@ -45,4 +56,5 @@ services:
 
         ulimits:
             nprocs: 2048
+            
         restart: unless-stopped
