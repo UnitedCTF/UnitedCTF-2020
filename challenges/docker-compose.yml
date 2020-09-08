@@ -17,3 +17,15 @@ services:
         restart: on-failure
         ports:
             - 3002:3000
+
+    la_goutte_pwn:
+        build: ./pwning/la_goutte
+        image: la_goutte_pwn
+        volumes:
+            - ./pwning/la_goutte/la_goutte:/home/goutte/la_goutte:ro
+            - ./pwning/la_goutte/xinetd:/etc/xinetd.d/xinetd:ro
+        ports:
+            - 17000:8888
+        ulimits:
+            nproc: 2048
+        restart: unless-stopped
