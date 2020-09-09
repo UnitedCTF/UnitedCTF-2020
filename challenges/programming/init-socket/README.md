@@ -25,6 +25,7 @@ python -m pip install --upgrade pwntools
 from pwn import * # Importer pwntools
 
 connection = remote("127.0.0.1", 3000) # Ouvrir une connexion vers l'adresse IP 127.0.0.1 et le port 3000
+connection = remote("localhost", 3000) # Vous pouvez aussi mettre l'hôte du serveur (e.g: www.google.com)
 connection.recv(1024) # Recevoir 1024 MAXIMUM (il est possible que vous en receviez moins)
 connection.recvline() # Lire des données jusqu'à temps qu'on recoive un saut de ligne ('\n')
 connection.send("allo") # Envoyer du texte
