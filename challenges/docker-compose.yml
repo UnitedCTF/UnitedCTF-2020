@@ -23,6 +23,12 @@ services:
         restart: on-failure
         ports:
             - 3002:3000
+    
+    init-socket:
+        build: ./programming/init-socket
+        restart: on-failure
+        ports:
+            - 3004:3000
 
     la_goutte_pwn:
         build: ./pwning/la_goutte
@@ -53,8 +59,6 @@ services:
             - ./pwning/le_lac/flag:/flag:ro
         ports:
             - 17002:8888
-
         ulimits:
-            nprocs: 2048
-            
+            nprocs: 2048 
         restart: unless-stopped
