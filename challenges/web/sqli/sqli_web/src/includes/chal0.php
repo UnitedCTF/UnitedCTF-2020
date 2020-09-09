@@ -1,6 +1,6 @@
 <?php
 $SQL_QUERY = "SELECT * FROM challenge0 WHERE username='%s';";
-$ROW_FORMAT = "<tr><td>%d</td><td>%s</td><td>%s</td></tr>";
+$ROW_FORMAT = '<tr><td>%d</td><td>%s</td><td>%s</td></tr>';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$username = $_POST["username"];

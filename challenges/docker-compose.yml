@@ -69,27 +69,28 @@ services:
             nproc: 2048
         restart: unless-stopped
 
-    sqli_database:
-        build:
-            context: ./web/sqli/sqli_db/
+    sqli_db:
+        build: ./web/sqli/sqli_db
         env_file:
             - ./web/sqli/sqli_db/.env
             - ./web/sqli/sqli_db/db.env
+        volumes:
+            - ./web/sqli/sqli_db/init_sql:/init_sql:ro
         restart: unless-stopped
         networks:
             - sqli-net
 
     sqli_web:
-        build: ./web/sqli/sqli_website/
+        build: ./web/sqli/sqli_web/
         depends_on:
-            - sqli_database
+            - sqli_db
         ports:
             - 18000:80
         volumes:
-            - "./web/sqli/sqli_website/src:/var/www/html"
+            - ./web/sqli/sqli_web/src:/var/www/html
         env_file: ./web/sqli/sqli_db/.env
         environment:
-            DB_HOST: sqli_database
+            DB_HOST: sqli_db
         restart: unless-stopped
         networks:
             - sqli-net

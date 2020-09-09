@@ -1,6 +1,5 @@
 USE $MYSQL_DATABASE;
 
- -- Challenge # 0
 DROP TABLE IF EXISTS challenge0;
 CREATE TABLE challenge0 (
 	id INT AUTO_INCREMENT PRIMARY KEY,
@@ -18,5 +17,3 @@ INSERT INTO challenge0 (username,password) VALUES
 	("admin", "SeriouslyNeverDoThis,It'sBad"),
 	("united", "HashPasswordsWithAProperCryptographicHashAndASalt"),
 	("You won't be able to guess my name BSh8dn_fdHs", "The flag: FLAG-One_SELECT_to_bring_them_all_YbHKhnADUbc");
-
- -- End challenge # 0

@@ -22,7 +22,7 @@ include("includes/chal0.php");
 	?>
 		<form method="post">
 		  <div class="form-group">
-			<label for="userID">Username</label>
+			<label for="username">Username</label>
 			<input type="text" class="form-control" id="username" name="username" placeholder="test" maxlength=256>
 		  </div>
 		  <button type="submit" class="btn btn-primary">Cherchez</button>
