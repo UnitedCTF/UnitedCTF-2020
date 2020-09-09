@@ -50,7 +50,9 @@ Dans ce défi, le serveur vous envoie un objet JSON décrivant une personne, son
 - Envoyer cet objet avec sa nouvelle propriété au serveur
 
 ### Exemple: données du serveur
-> Note: les noms seront remplacés par des noms aléatoires.
+> Note 1: les noms seront remplacés par des noms aléatoires.
+
+> Note 2: les commentaires (`// ...`) ne sont pas valides en JSON. Ils sont utilisés ici seulement pour clarifier l'exemple.
 
 ```json
 {
@@ -77,7 +79,7 @@ Dans ce défi, le serveur vous envoie un objet JSON décrivant une personne, son
 }
 ```
 
-> Pour ce défi, n'implémentez pas votre propre décodeur de JSON. Cherchez plutôt une librairie à utiliser qui le fera à votre place. Ne réinventez pas la roue!
+> ATTENTION: Pour ce défi, n'implémentez pas votre propre décodeur de JSON. Cherchez plutôt une librairie à utiliser qui le fera à votre place. Ne réinventez pas la roue!
 
 ## Setup
 
