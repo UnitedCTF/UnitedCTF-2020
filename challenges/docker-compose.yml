@@ -23,12 +23,13 @@ services:
         restart: on-failure
         ports:
             - 3002:3000
-    
-    init-socket:
-        build: ./programming/init-socket
+
+
+    init-json:
+        build: ./programming/init-json
         restart: on-failure
         ports:
-            - 3004:3000
+            - 3005:3000
 
     la_goutte_pwn:
         build: ./pwning/la_goutte
