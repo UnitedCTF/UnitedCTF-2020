@@ -35,6 +35,12 @@ services:
         restart: on-failure
         ports:
             - 3005:3000
+    
+    maze:
+        build: ./programming/maze
+        restart: on-failure
+        ports:
+            - 3006:3000
 
     la_goutte_pwn:
         build: ./pwning/la_goutte
