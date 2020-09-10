@@ -7,6 +7,16 @@ import flag
 def distance(sx, sy, dx, dy):
     return abs(sx - dx) + abs(sy - dy)
 
+
+def show(maze, spaces = False):
+    print()
+    for y in range(len(maze)):
+        for x in range(len(maze)):
+            print(maze[x][y] if maze[x][y] != "0" or not spaces else " ", end="")
+
+        print()
+
+
 # Generate a maze by recursive divison
 def generate(maze, sx, sy, dx, dy, hhole = None, vhole = None, debug = False):
     if sx == dx or sy == dy:
@@ -82,7 +92,6 @@ def generate(maze, sx, sy, dx, dy, hhole = None, vhole = None, debug = False):
 
 
 def free_neighbors(maze, tile):
-    print(tile, len(maze))
     return sum([
         int(maze[tile[0] - 1][tile[1]] == "0"),
         int(maze[tile[0] + 1][tile[1]] == "0"),
@@ -90,32 +99,88 @@ def free_neighbors(maze, tile):
         int(maze[tile[0]][tile[1] + 1] == "0")
     ])
 
+def find_neighbors(maze, tile):
+    neighbors = []
+
+    if tile[0] > 1:
+        neighbors.append((tile[0] - 1, tile[1]))
+    if tile[0] < len(maze) - 1:
+        neighbors.append((tile[0] + 1, tile[1]))
+    if tile[1] > 1:
+        neighbors.append((tile[0], tile[1] - 1))
+    if tile[1] < len(maze) - 1:
+        neighbors.append((tile[0], tile[1] + 1))
+
+    return neighbors
+
+
+def solve(maze, tile):
+    x, y = tile
+
+    if maze[x][y] == "F":
+        return [tile]
+
+    if maze[x][y] != "D":
+        maze[x][y] = "X"
+
+    path = None
+
+    for neighbor in find_neighbors(maze, tile):
+        if maze[neighbor[0]][neighbor[1]] not in "0F":
+            continue
+
+        path = solve(maze, neighbor)
+
+        if path:
+            break
+
+    if maze[x][y] != "D":
+        maze[x][y] = "0"
+
+    if path is not None:
+        return [tile] + path
+    else:
+        return None
+
 
 class TaskHandler(socketserver.BaseRequestHandler):
     def main(self, client):
-        size = random.randint(8, 14)
+        while True:
+            size = random.randint(8, 14)
 
-        maze = [["#"] * size for _ in range(size)]
-        for y in range(1, size - 1):
-            for x in range(1, size - 1):
-                maze[x][y] = "0"
-        
-        generate(maze, 1, 1, size - 2, size - 2)
+            maze = [["#"] * size for _ in range(size)]
+            for y in range(1, size - 1):
+                for x in range(1, size - 1):
+                    maze[x][y] = "0"
 
-        # From (1, 1) to (size - 2, size - 2)
-        tiles = [(i % size, i // size) for i in range(size * size) if i % size != 0 and i % size != size - 1 and i // size != 0 and i // size != size - 1]
-        isolated_tiles = [tile for tile in tiles if free_neighbors(maze, tile) == 1]
+            generate(maze, 1, 1, size - 2, size - 2)
 
-        # Try 10 times to choose a start and a goal, otherwise restart the whole thing (broken maze) :)
-        for _ in range(10):
-            start = random.choice(isolated_tiles)
-            goal = random.choice([tile for tile in isolated_tiles if tile != start])
+            # From (1, 1) to (size - 2, size - 2)
+            tiles = [(i % size, i // size) for i in range(size * size) if i % size != 0 and i % size != size - 1 and i // size != 0 and i // size != size - 1]
+            isolated_tiles = [tile for tile in tiles if free_neighbors(maze, tile) == 1]
 
-            # TODO: Make sure there's a path between start and goal
-        
-        maze[start[0]][start[1]] = "D"
-        maze[goal[0]][goal[1]] = "F"
+            # Try 10 times to choose a start and a goal, otherwise restart the whole thing (broken maze) :)
+            for _ in range(10):
+                start = random.choice(isolated_tiles)
+                goal = random.choice([tile for tile in isolated_tiles if tile != start])
 
+                maze[start[0]][start[1]] = "D"
+                maze[goal[0]][goal[1]] = "F"
+
+                # TODO: Make sure there's a path between start and goal
+                show(maze, spaces = True)
+                path = solve(maze, start)
+
+                if path:
+                    break
+                else:
+                    maze[start[0]][start[1]] = "0"
+                    maze[goal[0]][goal[1]] = "0"
+
+            if path is not None:
+                break
+
+        print(path)
         data = f"{size}\n"
 
         for y in range(size):
@@ -127,10 +192,10 @@ class TaskHandler(socketserver.BaseRequestHandler):
         client.sendall(data.encode())
         answer = client.recv(1024).decode()
 
-        if answer == child:
-            client.sendall(flag.flag.encode())
-        else:
-            client.sendall(b"Wrong answer!")
+        # if answer == child:
+        #     client.sendall(flag.flag.encode())
+        # else:
+        #     client.sendall(b"Wrong answer!")
         
         client.shutdown(socket.SHUT_RDWR)
         client.close()

@@ -58,7 +58,7 @@ L'algorithme A* (A star) est un algorithme populaire utilisé dans des problème
 Puisque l'algorithme est un peu plus complexe à expliquer, je vous laisse le soin de faire vos recherches sur Google pour en apprendre plus!
 
 ## Format de la solution
-Vous devez envoyer votre solution au serveur selon le format suivant
+Vous devez envoyer votre solution au serveur selon le format suivant:
 
 ```
 Nombre de cases du chemin
@@ -79,6 +79,8 @@ Exemple:
 4 2
 4 3
 ```
+
+La case de départ et la case d'arrivée doivent être incluses dans votre réponse.
 
 > NOTE: vous pouvez seulement vous déplacer horizontalement et verticalement. Pas de diagonales!
 
