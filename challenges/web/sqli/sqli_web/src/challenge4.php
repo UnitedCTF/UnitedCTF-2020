@@ -11,7 +11,7 @@ include("includes/chal4.php");
 <body>
 <div id="chall1-form" class="mt-5 container">
 	<h1>Injection SQL #4</h1>
-	<h2><em>&#x3C;Insert pretense for challenge here&#x3Ca;</em> d'un flag par id</h2>
+	<h2><em>&#x3C;Insert pretense for challenge here&#x3E;</em> d'un flag par id</h2>
 	<div class="mt-5 justify-content-center">
 	<?php if (isset($QUERY_STRING)) {
 		echo "<p class='alert alert-info'>Votre dernière requête était: <code>$QUERY_STRING</code></p>";
