@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Login 1</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        display: -ms-flexbox;
+        display: flex;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
+
+      .form-signin {
+        width: 100%;
+        max-width: 330px;
+        padding: 15px;
+        margin: auto;
+      }
+      .form-signin .checkbox {
+        font-weight: 400;
+      }
+      .form-signin .form-control {
+        position: relative;
+        box-sizing: border-box;
+        height: auto;
+        padding: 10px;
+        font-size: 16px;
+      }
+      .form-signin .form-control:focus {
+        z-index: 2;
+      }
+      .form-signin input[type="email"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      .form-signin input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    </style>
+    <script>
+      function login (event) {
+        // I changed my password and update the login to make it more secure...
+        var flag = "\x46\x4c\x41\x47\x2d\x65\x37\x65\x62\x66\x62\x62\x39\x64\x63\x66\x35\x63\x66\x62\x36\x30\x61\x65\x31\x62\x62\x35\x39\x64\x34\x30\x66\x37\x36\x39\x35";
+        var email = "\x61\x64\x6d\x69\x6e\x40\x6c\x6f\x63\x61\x6c";
+        var password = "\x50\x40\x61\x73\x73\x77\x30\x72\x64\x21";
+        var inputEmail = document.getElementById('inputEmail');
+        var inputPassword = document.getElementById('inputPassword');
+
+        if (inputEmail.value === email && inputPassword.value === password) {
+          alert("Welcome back admin! Here is your flag:\n" + flag);
+        } else {
+          alert('Bad credentials!');
+        }
+
+        return false;
+      }
+    </script>
+  </head>
+  <body class="text-center">
+    <form class="form-signin" onsubmit="login()">
+      <h1 class="h3 mb-3 font-weight-normal">Login 1</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+  </body>
+</html>
