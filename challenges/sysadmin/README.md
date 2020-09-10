@@ -135,3 +135,19 @@ Le flag est envoyé chaque seconde au binaire `/keyrecv`. Il est possible de le 
 # Le PID va changer, mais il devrait être proche de 9
 strace -p <PID de /keyrecv>
 ```
+
+### FLAG9
+
+#### Description
+
+Un petit mélange des connaissances des derniers flags.
+
+#### Solution
+
+Le script `/home/secretuser/rotatekeys.sh` contient une race condition où la commande openssl prend un peu trop de temps et la clé secrète est exposée
+
+```bash
+sudo -u secretuser /home/secretuser/rotatekeys.sh &
+cat /tmp/secret > secret
+openssl enc -aes-256-cbc -d -pbkdf2 -iter 100000 -salt -md sha512 -pass file:secret -in /home/secretuser/flag.enc -out -
+```
