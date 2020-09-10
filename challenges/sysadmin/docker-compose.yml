@@ -88,6 +88,14 @@ services:
         depends_on:
             - unitedctf-sysadmin-base
 
+    unitedctf-sysadmin-flag10:
+        image: unitedctf-sysadmin-flag10
+        build:
+            context: ./flag10
+        command: ["/bin/sh", "-c", "echo 'flag10 works' && exit 0"]
+        depends_on:
+            - unitedctf-sysadmin-base
+
     unitedctf-sysadmin-spawner:
         image: unitedctf-sysadmin-spawner
         build:
@@ -111,3 +119,4 @@ services:
             - unitedctf-sysadmin-flag7
             - unitedctf-sysadmin-flag8
             - unitedctf-sysadmin-flag9
+            - unitedctf-sysadmin-flag10
