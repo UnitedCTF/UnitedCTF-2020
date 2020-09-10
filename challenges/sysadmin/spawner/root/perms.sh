@@ -1,6 +1,9 @@
 #!/bin/sh
 set -e
 
+groupadd spawner
+
+chmod +x /*.sh
 chown root:root /etc
 
 chown -R root:root /etc/ssh
@@ -42,3 +45,6 @@ chown -R flag7:flag7 /home/flag7
 
 useradd -M -G spawner -d /home/flag8 -s /forward-to-docker.sh flag8
 chown -R flag8:flag8 /home/flag8
+
+useradd -M -G spawner -d /home/flag9 -s /forward-to-docker.sh flag9
+chown -R flag9:flag9 /home/flag9

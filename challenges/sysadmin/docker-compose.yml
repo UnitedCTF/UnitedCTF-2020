@@ -7,8 +7,6 @@ services:
         build:
             context: ./base
         command: ["/bin/sh", "-c", "echo 'base works' && exit 0"]
-        depends_on:
-            - unitedctf-sysadmin-spawner
 
     unitedctf-sysadmin-flag0:
         image: unitedctf-sysadmin-flag0
@@ -16,7 +14,6 @@ services:
             context: ./flag0
         command: ["/bin/sh", "-c", "echo 'flag0 works' && exit 0"]
         depends_on:
-            - unitedctf-sysadmin-spawner
             - unitedctf-sysadmin-base
 
     unitedctf-sysadmin-flag1:
@@ -25,7 +22,6 @@ services:
             context: ./flag1
         command: ["/bin/sh", "-c", "echo 'flag1 works' && exit 0"]
         depends_on:
-            - unitedctf-sysadmin-spawner
             - unitedctf-sysadmin-base
 
     unitedctf-sysadmin-flag2:
@@ -34,7 +30,6 @@ services:
             context: ./flag2
         command: ["/bin/sh", "-c", "echo 'flag2 works' && exit 0"]
         depends_on:
-            - unitedctf-sysadmin-spawner
             - unitedctf-sysadmin-base
 
     unitedctf-sysadmin-flag3:
@@ -43,7 +38,6 @@ services:
             context: ./flag3
         command: ["/bin/sh", "-c", "echo 'flag3 works' && exit 0"]
         depends_on:
-            - unitedctf-sysadmin-spawner
             - unitedctf-sysadmin-base
 
     unitedctf-sysadmin-flag4:
@@ -52,7 +46,6 @@ services:
             context: ./flag4
         command: ["/bin/sh", "-c", "echo 'flag4 works' && exit 0"]
         depends_on:
-            - unitedctf-sysadmin-spawner
             - unitedctf-sysadmin-base
 
     unitedctf-sysadmin-flag5:
@@ -61,7 +54,6 @@ services:
             context: ./flag5
         command: ["/bin/sh", "-c", "echo 'flag5 works' && exit 0"]
         depends_on:
-            - unitedctf-sysadmin-spawner
             - unitedctf-sysadmin-base
 
     unitedctf-sysadmin-flag6:
@@ -70,7 +62,6 @@ services:
             context: ./flag6
         command: ["/bin/sh", "-c", "echo 'flag6 works' && exit 0"]
         depends_on:
-            - unitedctf-sysadmin-spawner
             - unitedctf-sysadmin-base
 
     unitedctf-sysadmin-flag7:
@@ -79,7 +70,6 @@ services:
             context: ./flag7
         command: ["/bin/sh", "-c", "echo 'flag7 works' && exit 0"]
         depends_on:
-            - unitedctf-sysadmin-spawner
             - unitedctf-sysadmin-base
 
     unitedctf-sysadmin-flag8:
@@ -88,7 +78,14 @@ services:
             context: ./flag8
         command: ["/bin/sh", "-c", "echo 'flag8 works' && exit 0"]
         depends_on:
-            - unitedctf-sysadmin-spawner
+            - unitedctf-sysadmin-base
+
+    unitedctf-sysadmin-flag9:
+        image: unitedctf-sysadmin-flag9
+        build:
+            context: ./flag9
+        command: ["/bin/sh", "-c", "echo 'flag9 works' && exit 0"]
+        depends_on:
             - unitedctf-sysadmin-base
 
     unitedctf-sysadmin-spawner:
@@ -102,3 +99,14 @@ services:
         volumes:
             # Need to add namespaces
             - /var/run/docker.sock:/var/run/docker.sock
+        depends_on:
+            - unitedctf-sysadmin-base
+            - unitedctf-sysadmin-flag1
+            - unitedctf-sysadmin-flag2
+            - unitedctf-sysadmin-flag3
+            - unitedctf-sysadmin-flag4
+            - unitedctf-sysadmin-flag5
+            - unitedctf-sysadmin-flag6
+            - unitedctf-sysadmin-flag7
+            - unitedctf-sysadmin-flag8
+            - unitedctf-sysadmin-flag9
