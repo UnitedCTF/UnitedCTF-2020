@@ -12,6 +12,9 @@ fi
 # Display the network interfaces
 ifconfig
 
+# Kill dangling images
+docker kill $(docker ps -f "name=^unitedctf-sysadmin-flag[0-9]+" -q) &>/dev/null
+
 while :; do
     sleep Infinity
 done

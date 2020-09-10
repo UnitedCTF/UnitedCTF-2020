@@ -93,6 +93,7 @@ services:
         build:
             context: ./spawner
         hostname: unitedctf-sysadmin-spawner
+        restart: unless-stopped
         init: true
         ports:
             - "5022:22"
