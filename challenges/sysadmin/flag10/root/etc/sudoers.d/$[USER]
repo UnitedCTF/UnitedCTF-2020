@@ -1,1 +1,1 @@
-$[USER] ALL=(root) NOPASSWD: /elevate.sh
+$[USER] ALL=(secretuser) NOPASSWD: /elevate.sh

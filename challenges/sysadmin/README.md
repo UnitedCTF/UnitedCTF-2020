@@ -144,7 +144,7 @@ L'utilisation de openssl avec pbkdf2 et tout plein d'itérations rend le flag im
 
 #### Solution
 
-Le script `/home/secretuser/rotatekeys.sh` contient une race condition où la commande openssl prend un peu trop de temps et la clé secrète est exposée
+Le script `/home/secretuser/rotatekeys.sh` contient une race condition où la commande openssl prend un peu trop de temps et la clé secrète est exposée.
 
 ```bash
 sudo -u secretuser /home/secretuser/rotatekeys.sh & # mettre en arrière plan
@@ -163,8 +163,7 @@ Un script exécute tout ce qu'on lui passe en paramètre avec des droits d'admin
 Une solution parmis plusieurs.
 
 ```bash
-# taper à l'aveugle :!cat /home/secretuser/secret > secret
-sudo -u root \
-    /elevate.sh vi && \
-    cat secret
+ln -s ../secretuser/secret z &&
+    sudo -u secretuser \
+        /elevate.sh cat z '1>&0'
 ```

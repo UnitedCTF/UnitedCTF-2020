@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pattern="(s|m|c|r|b|u|g|w|x|d|\?|\*|-|\||\`|>|<|\"|\!|\.)"
+pattern="(s|m|v|r|b|u|g|w|x|d|\?|\*|-|\||\`|<|\"|\!|\.)"
 if [[ $1 =~ [^A-z0-9] ]] || [ ! -x "/bin/$1" ]; then
     echo -e "\e[91mEXÉCUTABLE INVALIDE\e[0m"
     exit 1
