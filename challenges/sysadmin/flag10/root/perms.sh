@@ -11,6 +11,7 @@ chown -R root:root /home
 useradd -d /home/$[USER] -s /bin/bash $[USER]
 chown -R $[USER]:$[USER] /home/$[USER]
 
-useradd -d /home/secretuser -s /bin/bash secretuser
-chown -R secretuser:secretuser /home/secretuser
-chmod 600 /home/secretuser/secret
+useradd -d /home/superuser -s /bin/bash superuser
+chown -R superuser:superuser /home/superuser
+chmod 600 /home/superuser/secret
+chmod 700 /home/superuser

