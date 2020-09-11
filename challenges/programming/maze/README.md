@@ -94,5 +94,5 @@ Requirements:
 Start:
 
 ```
-docker-compose up init-json
+docker-compose up maze
 ```
