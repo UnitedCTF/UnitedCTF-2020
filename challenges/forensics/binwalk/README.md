@@ -16,7 +16,7 @@ Requirements:
 
 # Writeup
 
-En faisant de la rechercher sur Internet, on découvre qu'on peut extraire les fichiers avec le paramètre `-e`. 
+En faisant de la recherche sur Internet, on découvre qu'on peut extraire les fichiers avec le paramètre `-e`. 
 
 `binwalk -e opentx-tx16s-en.bin`
 
