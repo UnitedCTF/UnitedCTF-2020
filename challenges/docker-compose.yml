@@ -35,6 +35,12 @@ services:
         restart: on-failure
         ports:
             - 3005:3000
+    
+    cmd-injection:
+        build: ./web/cmd-injection
+        restart: on-failure
+        ports:
+            - 3007:5000
 
     la_goutte_pwn:
         build: ./pwning/la_goutte
