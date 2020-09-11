@@ -14,7 +14,7 @@ def get_index():
 @app.route("/", methods=["POST"])
 def post_index():
     text = request.form.get("text")
-    cmd = f"echo {text} 2>&1 | grep -oiP 'FLAG-[abcdef0-9]+'"
+    cmd = f"echo '{text}' | grep -oiP 'FLAG-[abcdef0-9]+'"
 
     print(cmd)
     stream = os.popen(cmd)
