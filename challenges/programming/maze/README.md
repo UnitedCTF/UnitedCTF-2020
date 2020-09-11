@@ -30,9 +30,9 @@ F représente la case d'arrivée
 ########
 ```
 
-> NOTE: La première case représente le nombre de lignes du labyrinthe.
+> **NOTE**: La première case représente le nombre de lignes du labyrinthe.
 
-> NOTE: Il y aura toujours des murs sur les 4 côtés du labyrinthe.
+> **NOTE**: Il y aura toujours des murs sur les 4 côtés du labyrinthe.
 
 ### Structure de données
 Pour représenter le labyrinthe dans votre code, il vous sera utile d'utiliser une structure de données qui représente la position d'une case et si celle-ci peut être traversée ou non.
@@ -82,7 +82,9 @@ Exemple:
 
 La case de départ et la case d'arrivée doivent être incluses dans votre réponse.
 
-> NOTE: vous pouvez seulement vous déplacer horizontalement et verticalement. Pas de diagonales!
+> **NOTE**: vous pouvez seulement vous déplacer horizontalement et verticalement. Pas de diagonales!
+
+> **NOTE**: envoyez votre réponse en un seul appel réseau (concaténez toutes les lignes de la solution et envoyez la avec un seul `send`).
 
 ## Setup
 

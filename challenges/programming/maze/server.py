@@ -34,6 +34,7 @@ def generate(maze, sx, sy, dx, dy, hhole = None, vhole = None, debug = False):
     else:
         vwall = None
 
+    # We can divide the chamber horizontally (height more than 2)
     if dy - sy > 1 and len(hchoices) > 0:
         hwall = random.choice(hchoices)
     
@@ -52,6 +53,7 @@ def generate(maze, sx, sy, dx, dy, hhole = None, vhole = None, debug = False):
         return
 
     calls = []
+
     if hwall is not None and vwall is not None:
         hhole1 = random.randint(sx, vwall - 1)
         hhole2 = random.randint(vwall + 1, dx)
@@ -167,11 +169,10 @@ class TaskHandler(socketserver.BaseRequestHandler):
                 maze[start[0]][start[1]] = "D"
                 maze[goal[0]][goal[1]] = "F"
 
-                # TODO: Make sure there's a path between start and goal
                 show(maze, spaces = True)
                 path = solve(maze, start)
 
-                if path:
+                if path and len(path) > 5:
                     break
                 else:
                     maze[start[0]][start[1]] = "0"
@@ -190,12 +191,53 @@ class TaskHandler(socketserver.BaseRequestHandler):
             data += "\n"
         
         client.sendall(data.encode())
-        answer = client.recv(1024).decode()
+        client.settimeout(5)
+        try:
+            answer = client.recv(1024).decode()
+        except socket.timeout:
+            print("Client timed out")
+            client.sendall(b"Time out!\n")
+            client.shutdown(socket.SHUT_RDWR)
+            client.close()
+            return
 
-        # if answer == child:
-        #     client.sendall(flag.flag.encode())
-        # else:
-        #     client.sendall(b"Wrong answer!")
+        print(answer)
+
+        lines = answer.split("\n")
+
+        try:
+            if len(lines) > 0 and len(lines) >= int(lines[0]):
+                n = int(lines[0])
+
+                if n <= 0:
+                    raise ValueError("Invalid line count")
+
+                path = []
+
+                for line in lines[1 : n + 1]:
+                    x, y = map(int, line.split(" "))
+                    path.append((x, y))
+                
+                previous = path[0]
+
+                if maze[path[0][0]][path[0][1]] != "D":
+                    raise ValueError("Invalid start point")
+                
+                if maze[path[-1][0]][path[-1][1]] != "F":
+                    raise ValueError("Invalid end point")
+                
+                for tile in path[1 : -1]:
+                    if distance(previous[0], previous[1], tile[0], tile[1]) > 1 or maze[tile[0]][tile[1]] != "0":
+                        raise ValueError("Invalid move")
+
+                    previous = tile
+
+                client.sendall(flag.flag.encode() + b"\n")
+            else:
+                client.sendall(b"Wrong answer!\n")
+        except ValueError as e:
+            print(e)
+            client.sendall(b"Wrong answer!\n")
         
         client.shutdown(socket.SHUT_RDWR)
         client.close()
