@@ -25,7 +25,7 @@ services:
             - 3003:3000
     
     init-socket:
-        build: ./programming/init-json
+        build: ./programming/init-socket
         restart: on-failure
         ports:
             - 3004:3000
@@ -60,6 +60,24 @@ services:
             - 16999:8888
         ulimits:
             nproc: 2048
+
+    solve-math:
+        build: ./programming/solve-math
+        restart: on-failure
+        ports:
+            - 4001:3000
+
+    hash-breaker:
+        build: ./programming/hash-breaker
+        restart: on-failure
+        ports:
+            - 4002:3000
+
+    captcha-reader:
+        build: ./programming/captcha-reader
+        restart: on-failure
+        ports:
+            - 4003:3000
 
     la_goutte_pwn:
         build: ./pwning/la_goutte
