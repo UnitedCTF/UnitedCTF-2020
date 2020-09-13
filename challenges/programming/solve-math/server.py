@@ -30,6 +30,7 @@ class TaskHandler(socketserver.BaseRequestHandler):
 			elif answer == value:				
 				if i == tries:
 					client.sendall(flag.encode())
+					break
 			else:
 				client.sendall("Mauvaise réponse!".encode('utf-8'))
 				break
