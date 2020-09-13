@@ -12,7 +12,9 @@ Dans le programme, il y a une fonction qui fait 100 itérations, de 99 à 0. Lor
 
 Voici une cheat sheet pour débuter avec GDB: https://users.ece.utexas.edu/~adnan/gdb-refcard.pdf
 
-L'outil PEDA pourra peut-être vous aider: https://github.com/longld/peda
+L'outil pwndbg pourra vous aider: https://github.com/pwndbg/pwndbg
+
+Sinon essayez peda: https://github.com/longld/peda
 
 ## Setup
 
