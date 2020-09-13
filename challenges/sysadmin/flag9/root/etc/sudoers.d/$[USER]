@@ -1,0 +1,1 @@
+$[USER] ALL=(secretuser) NOPASSWD: /home/secretuser/rotatekeys.sh
