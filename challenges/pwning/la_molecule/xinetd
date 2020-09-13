@@ -1,0 +1,18 @@
+service molecule
+{
+    disable = no
+    type        = UNLISTED
+    wait        = no
+    server      = /home/molecule/la_molecule
+    socket_type = stream
+    protocol    = tcp
+    user        = molecule
+    port        = 8888
+    # bind        = 0.0.0.0
+    # safety options
+    flags       = REUSE
+    per_source	= 5 # the maximum instances of this service per source IP address
+    rlimit_cpu	= 5 # the maximum number of CPU seconds that the service may use
+    #rlimit_as  = 1024M # the Address Space resource limit for the service
+    nice        = 18
+}
