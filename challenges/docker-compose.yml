@@ -40,7 +40,7 @@ services:
         build: ./pwning/la_molecule
         image: la_molecule_pwn
         volumes:
-            - ./pwning/la_molecule/la_goutte:/home/molecule/la_molecule:ro
+            - ./pwning/la_molecule/la_molecule:/home/molecule/la_molecule:ro
             - ./pwning/la_molecule/xinetd:/etc/xinetd.d/xinetd:ro
         ports:
             - 16999:8888
