@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # hash-breaker challenge
 
 import socket
@@ -36,7 +37,7 @@ class TaskHandler(socketserver.BaseRequestHandler):
 
 	def setup(self):
 		# on veut pas que le TaskHandler attende recv pour toujours
-		self.request.settimeout(120.0)
+		self.request.settimeout(30.0)
 
 	def handle(self):
 		self.main(self.request)
