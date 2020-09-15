@@ -1,5 +1,5 @@
+#!/usr/bin/env python3
 # hash-breaker challenge
-
 import socket
 import socketserver
 import time
@@ -16,14 +16,14 @@ for i in range(48, 123):
 		sequence.append(chr(i))
 
 # ceux qui portes à confusion sont enlevés (dépend trop de la qualité d'OCR de chaque joueur)
-#sequence.remove('l')
-#sequence.remove('1')
-#sequence.remove('i')
-#sequence.remove('I')
-#sequence.remove('o')
-#sequence.remove('O')
-#sequence.remove('0')
-#sequence.remove('U')
+sequence.remove('l')
+sequence.remove('1')
+sequence.remove('i')
+sequence.remove('I')
+sequence.remove('o')
+sequence.remove('O')
+sequence.remove('0')
+sequence.remove('U')
 
 class TaskHandler(socketserver.BaseRequestHandler):
 	def main(self, client):
@@ -31,7 +31,7 @@ class TaskHandler(socketserver.BaseRequestHandler):
 		for i in range(1, tries + 1):
 			# generate random string
 			rndstring = ""
-			for i in range(random.randint(9, 11)):
+			for n in range(random.randint(9, 11)):
 				rndstring += random.choice(sequence)
 
 			# create image
@@ -50,13 +50,12 @@ class TaskHandler(socketserver.BaseRequestHandler):
 
 			# convert to Base64
 			newimg = base64.b64encode(img_bytes)
-			#newimg = newimg.decode('ascii')
 
 			print(str(newimg[:32]) + " ... " + str(newimg[-32:]))
 
 			# start timer and send challenge
 			start_time = time.time()
-			client.sendall(newimg + b"\n") #.encode()
+			client.sendall(newimg + b"\n")
 			answer = client.recv(1024).decode().strip()
 			end_time = time.time()
 
@@ -64,7 +63,6 @@ class TaskHandler(socketserver.BaseRequestHandler):
 
 			if end_time - start_time >= 3.0:
 				client.sendall("Trop lent!".encode('utf-8'))
-				tries += i
 				break
 			elif answer == rndstring:
 				if i == tries:
@@ -72,7 +70,6 @@ class TaskHandler(socketserver.BaseRequestHandler):
 					break
 			else:
 				client.sendall("Mauvaise réponse".encode('utf-8'))
-				tries += i
 				break
 
 		print("Finished")

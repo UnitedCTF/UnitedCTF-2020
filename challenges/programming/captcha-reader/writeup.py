@@ -42,7 +42,7 @@ while True:
 	# save file (as PNG) to memory buffer
 	in_mem_file = io.BytesIO()
 	img.save(in_mem_file, format = "PNG")
-	img.save("see.png")
+#	img.save("see.png")
 	in_mem_file.seek(0)
 	img_bytes = in_mem_file.read()
 
