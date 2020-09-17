@@ -26,6 +26,10 @@ class TaskHandler(socketserver.BaseRequestHandler):
         client.shutdown(socket.SHUT_RDWR)
         client.close()
 
+    def setup(self):
+        # on veut pas que le TaskHandler attende recv pour toujours
+        self.request.settimeout(30.0)
+
     def handle(self):
         self.main(self.request)
 
