@@ -64,4 +64,4 @@ def find_password():
 print("Flag: " + find_password())
 ```
 
-Flag: **FLAG-In_the_Land_of_Mariadb_where_the_Columns_lie_@>#;rF2T7}8-l3rO**
+Flag: **FLAG-In_the_Land_of_Mariadb_where_the_Columns_lie_4Z3H1ymWBX**

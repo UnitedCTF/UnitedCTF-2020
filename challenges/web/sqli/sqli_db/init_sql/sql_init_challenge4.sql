@@ -12,4 +12,4 @@ CREATE USER '$CHALLENGE4_USER'@'%' IDENTIFIED BY '$CHALLENGE4_USER_PASS';
 GRANT USAGE,SELECT ON ${MYSQL_DATABASE}.challenge4 TO ${CHALLENGE4_USER};
 
 INSERT INTO challenge4 (flag) VALUES
-	("FLAG-=+.I.U{7V$?rl!/p_Three_Tables_for_the_Elven-admins_under_the_RDBMS_f2@1_.V)qu_!;:{P,");
+	("FLAG-c3qUmJTeAW_Three_Tables_for_the_Elven-admins_under_the_RDBMS_SZcIvzI3do");

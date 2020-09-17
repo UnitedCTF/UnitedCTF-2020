@@ -80,4 +80,4 @@ print("Flag: " + find_password())
 
 After some time, we get the flag:
 
-Flag: **FLAG-=+.I.U{7V$?rl!/p_Three_Tables_for_the_Elven-admins_under_the_RDBMS_f2@1_.V)qu_!;:{P,**
+Flag: **FLAG-c3qUmJTeAW_Three_Tables_for_the_Elven-admins_under_the_RDBMS_SZcIvzI3do**

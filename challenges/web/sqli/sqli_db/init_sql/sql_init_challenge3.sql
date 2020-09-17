@@ -12,4 +12,4 @@ CREATE USER '$CHALLENGE3_USER'@'%' IDENTIFIED BY '$CHALLENGE3_USER_PASS';
 GRANT USAGE,SELECT ON ${MYSQL_DATABASE}.challenge3 TO ${CHALLENGE3_USER};
 
 INSERT INTO challenge3 (flag) VALUES
-	("FLAG-In_the_Land_of_Mariadb_where_the_Columns_lie_@>#;rF2T7}8-l3rO");
+	("FFLAG-In_the_Land_of_Mariadb_where_the_Columns_lie_4Z3H1ymWBX");
