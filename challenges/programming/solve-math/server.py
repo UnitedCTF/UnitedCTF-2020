@@ -25,7 +25,7 @@ class TaskHandler(socketserver.BaseRequestHandler):
 			answer = client.recv(1024).decode().strip()
 			end_time = time.time()
 
-			if end_time - start_time >= 1.0:
+			if end_time - start_time >= 2.0:
 				client.sendall("Trop lent!".encode('utf-8'))
 				break
 			elif answer == value:				
