@@ -25,9 +25,6 @@ RUN apt install -y docker-ce
 RUN apt install -y ssh net-tools sudo cowsay 
 
 COPY --from=build /app/build/root /
-RUN chmod +x /*.sh && chown root:root /*.sh 
-
-RUN groupadd spawner
-
 RUN sh < /perms.sh && rm /perms.sh
+
 ENTRYPOINT [ "/entrypoint.sh" ]

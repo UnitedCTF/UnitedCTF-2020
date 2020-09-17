@@ -12,6 +12,7 @@ docker run -it \
     --name "unitedctf-sysadmin-$1-$(date +%s.%3N)" \
     -m "$[UNITEDCTF_SYSADMIN_FLAG_BOX_MEMORY]" \
     --cpus="$[UNITEDCTF_SYSADMIN_FLAG_BOX_CPU]" \
+    --ulimit nproc="$[UNITEDCTF_SYSADMIN_FLAG_BOX_NPROC]" \
     -e "TMOUT=$[UNITEDCTF_SYSADMIN_FLAG_BOX_TMOUT]" \
     -u "$1" \
     -w "/home/$1" \

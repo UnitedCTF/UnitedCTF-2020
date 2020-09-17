@@ -1,0 +1,1 @@
+$[USER] ALL=(superuser) NOPASSWD: /elevate.sh
