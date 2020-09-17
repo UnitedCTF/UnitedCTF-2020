@@ -11,25 +11,6 @@ from Crypto.Util import Counter
 import flag
 
 
-def encrypt_ecb():
-    pass
-
-def decrypt_ecb():
-    pass
-
-def encrypt_cbc():
-    pass
-
-def decrypt_cbc():
-    pass
-
-def encrypt_ctr():
-    pass
-
-def decrypt_ctr():
-    pass
-
-
 def make_plaintext():
     pt = " ".join(names.get_full_name() for _ in range(10))
     pt = pt[: len(pt) - len(pt) % 16]
