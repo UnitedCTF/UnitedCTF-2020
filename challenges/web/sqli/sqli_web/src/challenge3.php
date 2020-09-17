@@ -23,7 +23,7 @@ include("includes/chal3.php");
 		<form method="post">
 		  <div class="form-group">
 			<label for="flagID">ID</label>
-			<input type="number" class="form-control" id="flagID" name="flagID" placeholder="1">
+			<input type="text" class="form-control" id="flagID" name="flagID" placeholder="1">
 		  </div>
 		  <button type="submit" class="btn btn-primary">Cherchez</button>
 		</form>
