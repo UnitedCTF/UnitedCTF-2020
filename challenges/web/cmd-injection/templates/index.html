@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Détecteur de flags</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+        <link rel="stylesheet" href="static/style.css" />
+    </head>
+    <body>
+        <div class="jumbotron text-center">
+            <h1>Détecteur de flags</h1>
+            <p>Aucun incident de sécurité en <b><code>0</code></b> jour(s)</p>
+        </div>
+
+        {% if output is defined %}
+        <div class="container-fluid pb-4">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-6">
+                    <h2>Résultat</h2>
+                    <div class="bg-dark p-1"><samp class="text-light">{{ output }}</samp></div>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-6">
+                    <h2>Allez-y!</h2>
+                    <p>Il suffit d'entrer du texte dans le champ ci-dessous et notre système trouvera les flags qui s'y cachent automatiquement.</p>
+                    <form method="POST">
+                        <textarea class="form-control" rows="10" name="text"></textarea>
+                        <button class="form-control">Trouver des flags</button>
+                    </form>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container text-center">
+              <a href="/source" class="text-muted">Obtenir le code source</a>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

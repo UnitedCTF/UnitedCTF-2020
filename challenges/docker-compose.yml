@@ -35,6 +35,14 @@ services:
         restart: on-failure
         ports:
             - 3005:3000
+    
+    cmd-injection:
+        build: ./web/cmd-injection
+        restart: on-failure
+        ports:
+            - 3007:5000
+        ulimits:
+            nproc: 2000
 
     la_molecule_pwn:
         build: ./pwning/la_molecule
