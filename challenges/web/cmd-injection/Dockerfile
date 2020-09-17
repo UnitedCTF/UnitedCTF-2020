@@ -11,4 +11,5 @@ COPY ./flag /app/flag
 COPY ./static /app/static/
 COPY ./templates /app/templates/
 
+USER 1000
 ENTRYPOINT [ "flask", "run", "--host", "0.0.0.0" ]

