@@ -82,7 +82,7 @@ Exemple:
 
 La case de départ et la case d'arrivée doivent être incluses dans votre réponse.
 
->> **ATTENTION**: L'axe des Y va de **haut en bas**. Ainsi, dans un labyrinthe de 8 par 8, le coin **en haut à gauche** est (0, 0) et le coin **en bas à droite** est (8, 8). C'est une convention très souvent utilisée en informatique.
+> **ATTENTION**: L'axe des Y va de **haut en bas**. Ainsi, dans un labyrinthe de 8 par 8, le coin **en haut à gauche** est (0, 0) et le coin **en bas à droite** est (8, 8). C'est une convention très souvent utilisée en informatique.
 
 > **NOTE**: vous pouvez seulement vous déplacer horizontalement et verticalement. Pas de diagonales!
 
