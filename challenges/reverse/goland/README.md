@@ -6,7 +6,7 @@ Author: [Alexandre-Xavier Labonté-Lamoureux (AXDOOMER)](https://github.com/axdo
 
 Défi "hardcore". Ne vous sentez pas mal si vous ne le réussissez pas.
 
-Vous devez utiliser toutes les compétances acquises durant les défis précédants et faire vos propres recherches pour le réussir.
+Vous devez utiliser toutes les compétences acquises durant les défis précédants et faire vos propres recherches pour le réussir.
 
 Utilisez Ghidra... peut-être qu'un plugin supplémentaire pourrait vous aider. Il est codé dans un langage compilé qui ne respecte pas exactement les conventions d'appel de fonction.
 
@@ -34,7 +34,7 @@ Les octets pointés:
 0x66,0x6e,0xca,0x66,0xbe,0x68,0xd0,0xbe,0xd0,0xc2,0x62,0xce,0x66,0xe2,0xe0,0x6e,0xe6
 ```
 
-Son adresse est chargée dans le registre `rbx` qu'on voit utilisé plus loin avec l'instruction `movzx eax, byte ptr [rbx+rsi]`. `rsi` est utilisé comme un offset (décalage) et est peut-être l'indice de la boucle qui itère sur la chaîne. Deux instruction sous `mov rbx, cs:main_gfal`, on vouyait le contenu de `rdx` mis dans `rdi`. Le contenu de `rdx` était assigné trois instructions plus haut. `mov rdx, cs:qword_55AAB8` copie la valeur 0x31 (49). 
+Son adresse est chargée dans le registre `rbx` qu'on voit utilisé plus loin avec l'instruction `movzx eax, byte ptr [rbx+rsi]`. `rsi` est utilisé comme un offset (décalage) et est peut-être l'indice de la boucle qui itère sur la chaîne. Deux instruction sous `mov rbx, cs:main_gfal`, on voyait le contenu de `rdx` mis dans `rdi`. Le contenu de `rdx` était assigné trois instructions plus haut. `mov rdx, cs:qword_55AAB8` copie la valeur 0x31 (49). 
 
 Si on continue à suivre comment le flag est manipulé, on voit `movzx eax, byte ptr [rbx+rsi]` suivi de l'instruction `shr al, 1`. La comparaison qui suit mène un un retour de la fonction. La comparaison est donc potentiellement ce qui détermine que le flag entré dans le programme est le bon. 
 
