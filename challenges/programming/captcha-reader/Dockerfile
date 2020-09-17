@@ -3,6 +3,15 @@ FROM python:3.6
 RUN mkdir /app
 WORKDIR /app
 
+RUN apk --update add \
+    gcc \
+    python3-dev \
+    build-base \
+    jpeg-dev \
+    libjpeg \
+    musl-dev \
+    zlib-dev
+
 COPY ./requirements.txt /app/requirements.txt
 RUN pip3 install -r /app/requirements.txt
 
