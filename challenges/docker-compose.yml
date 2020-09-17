@@ -12,17 +12,17 @@ services:
         ports:
             - 3001:3000
 
-    aes-ecb-byte-per-byte:
-        build: ./crypto/aes-ecb-byte-per-byte
-        restart: on-failure
-        ports:
-            - 3003:3000
-
     aes-ecb-cut-paste:
         build: ./crypto/aes-ecb-cut-paste
         restart: on-failure
         ports:
             - 3002:3000
+    
+    aes-ecb-byte-per-byte:
+        build: ./crypto/aes-ecb-byte-per-byte
+        restart: on-failure
+        ports:
+            - 3003:3000
     
     init-socket:
         build: ./programming/init-json
@@ -36,6 +36,12 @@ services:
         ports:
             - 3005:3000
     
+    maze:
+        build: ./programming/maze
+        restart: on-failure
+        ports:
+            - 3006:3000
+
     cmd-injection:
         build: ./web/cmd-injection
         restart: on-failure
