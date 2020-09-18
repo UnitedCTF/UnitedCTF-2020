@@ -50,7 +50,7 @@ Le second drapeau est accessible via l'article de blog avec l'identifiant _4_. I
 
 ## Flag 3
 
-- `FLAG-4394bca60851f3abdd85c27cd23f93a4`
+- `FLAG-83ce6616e29164fed1a140dcef7c263a`
 
 L'article de blog 5 (http://127.0.0.1:12000/?id=5) expliquait qu'il exsite des « web robots » avec un lien qui explique qu'il suffit de mettre un fichier `/robots.txt` pour les empêcher d'indexer certain page.
 
