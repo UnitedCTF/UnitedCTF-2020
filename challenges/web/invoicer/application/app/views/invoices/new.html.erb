@@ -1,0 +1,34 @@
+<h1>New Invoice</h1>
+
+<p>The invoice will be sent to the recipient email with a public link that inclus the invoice information.</p>
+
+<%= form_for @invoice do |f| %>
+  <% if @invoice.errors.any? %>
+    <div class="text-danger">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% @invoice.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :amount %>
+    <%= f.text_field :amount, class: "form-control", type: "number", min: "1", required: true, placeholder: "Amount" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :details %>
+    <%= f.text_field :details, class: "form-control", required: true, placeholder: "Details" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :recipient_name %>
+    <%= f.text_field :recipient_name, class: "form-control", required: true, placeholder: "Recipient name" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :recipient_email %>
+    <%= f.text_field :recipient_email, class: "form-control", type: "email", required: true, placeholder: "Recipient email" %>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Create and send</button>
+<% end %>

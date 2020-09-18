@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-between align-items-center">
+  <h1>Invoice</h1>
+  <%= link_to "Public link", public_invoice_url(public_token: @invoice.public_token) %>
+</div>
+
+<b>Id</b>
+<p><%= @invoice.id %></p>
+
+<b>Amount</b>
+<p><%= @invoice.amount %></p>
+
+<b>Details</b>
+<p><%= @invoice.details %></p>
+
+<b>Recipient email</b>
+<p><%= @invoice.recipient_email %></p>
+
+<b>Recipient name</b>
+<p><%= @invoice.recipient_name %></p>
+
+<b>Created at</b>
+<p><%= @invoice.created_at %></p>

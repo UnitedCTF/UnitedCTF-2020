@@ -1,0 +1,15 @@
+<h1>Invoice</h1>
+
+<p>Hi <%= @invoice.recipient_name %>, here is your invoice.</p>
+
+<b>Reference number</b>
+<p><%= @invoice.id %></p>
+
+<b>Amount</b>
+<p><%= @invoice.amount %></p>
+
+<b>Details</b>
+<p><%= @invoice.details %></p>
+
+<b>Created at</b>
+<p><%= @invoice.created_at %></p>
