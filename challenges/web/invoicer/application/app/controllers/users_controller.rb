@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def create
     return redirect_to '/' if current_user
-    
+
     @user = User.new(create_params)
     if @user.save
       flash[:success] = 'Successfully registered.'
@@ -28,11 +28,14 @@ class UsersController < ApplicationController
   end
 
   def update
+    if current_user.admin?
+      flash[:info] = "#{ENV['SUPPORT_ACCOUNT_NAME']} can not update profile."
+      redirect_to invoices_path
+      return
+    end
+
     @user = current_user
-    if @user.demo
-      flash[:danger] = 'Forbidden: your account is limited to the basic feature.'
-      redirect_to :root
-    elsif @user.update(update_params)
+    if @user.update(update_params)
       flash[:success] = 'Profile successfully updated.'
       redirect_to :root
     else
