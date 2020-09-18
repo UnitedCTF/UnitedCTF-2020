@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-between align-items-center">
+  <h1>Invoices</h1>
+  <%= link_to "New invoice", new_invoice_path %>
+</div>
+
+<p>Here is a list of all the invoices in your account. You can use the search bar to rapidly find an invoice.</p>
+
+<div>
+  <form class="form-inline">
+    <label class="sr-only" for="keyword">Keyword</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="keyword" name="keyword" placeholder="Keyword" value="<%= params[:keyword] %>">
+
+    <button type="submit" class="btn btn-primary mb-2">Search</button>
+    <%= link_to "Reset", invoices_path, class: "btn btn-link mb-2", role: "button" %>
+  </form>
+</div>
+
+<table class="table table-striped mt-3">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th>Amount</th>
+      <th>Details</th>
+      <th>Recipient name</th>
+      <th>Recipient email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @invoices.each do |invoice| %>
+      <tr>
+        <th scope="row"><%= invoice.id %></th>
+        <td><%= invoice.amount %></td>
+        <td><%= truncate(invoice.details, length: 24) %></td>
+        <td><%= truncate(invoice.recipient_email, length: 24) %></td>
+        <td><%= truncate(invoice.recipient_name, length: 24) %></td>
+        <td><%= link_to "View", invoice_path(invoice) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if @invoices.empty? %>
+ <p class="text-muted text-center">You have no invoice yet.</p>
+<% end %>
+

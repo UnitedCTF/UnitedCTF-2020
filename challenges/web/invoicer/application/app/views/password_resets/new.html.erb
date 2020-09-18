@@ -1,0 +1,10 @@
+<h1>Reset Password</h1>
+
+<%= form_tag password_resets_path, method: :post do %>
+  <div class="form-group">
+    <%= label_tag :email %>
+    <%= text_field_tag :email, params[:email], class: "form-control", type: "email", required: true, placeholder: "Email" %>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Reset Password</button>
+<% end %>
