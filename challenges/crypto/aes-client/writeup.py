@@ -14,7 +14,7 @@ def result():
         print(f"{test['mode']} {test['operation']} failed")
         exit(1)
 
-r = remote("127.0.0.1", 3000)
+r = remote("challenges.unitedctf.ca", 3000)
 
 # ECB encrypt
 test = json.loads(r.recv(1024))

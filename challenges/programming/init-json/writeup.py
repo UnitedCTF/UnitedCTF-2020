@@ -3,7 +3,7 @@ import json
 
 from pwn import *
 
-r = remote("127.0.0.1", 3000)
+r = remote("challenges.unitedctf.ca", 3005)
 
 data = json.loads(r.recv(1024).decode())
 

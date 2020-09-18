@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from pwn import *
 
-r = remote("127.0.0.1", 3000)
+r = remote("challenges.unitedctf.ca", 3004)
 
 name = r.recvline()
 print(name.decode().strip())

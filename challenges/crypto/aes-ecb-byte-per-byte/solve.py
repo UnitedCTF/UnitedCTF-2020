@@ -7,7 +7,7 @@ from pwn import *
 
 
 def local():
-    return remote("localhost", 3003)
+    return remote("challenges.unitedctf.ca", 3003)
 
 def server():
     raise Exception("Unimplemented")

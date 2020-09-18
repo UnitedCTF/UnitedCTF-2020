@@ -70,7 +70,7 @@ def parse(r):
     return maze, start, goal
 
 
-r = remote("127.0.0.1", 3000)
+r = remote("challenges.unitedctf.ca", 3006)
 
 maze, start, goal = parse(r)
 show(maze)
