@@ -27,3 +27,15 @@ Author: Notre partenaire [Kimoby](/partenaires/kimoby).
 [https://challenges.unitedctf.ca:12004](https://challenges.unitedctf.ca:12004)
 
 Des données secrètes.
+
+## Setup
+
+Requirements:
+- docker
+
+Start:
+
+```shell
+docker-compose up
+```
+
