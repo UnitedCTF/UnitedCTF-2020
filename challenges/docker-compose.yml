@@ -138,12 +138,26 @@ services:
         networks:
             - sqli-net
 
-    web:
+    web-101:
         build: ./web/web-101
         ports:
             - "12000:80"
         volumes:
             - "./web/web-101/src/:/var/www/html"
+
+    web-javascript:
+        image: php:7.4.7-apache
+        ports:
+            - "12001:80"
+        volumes:
+            - "./web/Javascript/src/:/var/www/html"
+
+    web-vous-pensez-passer-vos-intras:
+        build: ./web/vous-pensez-passer-vos-intras
+        ports:
+            - "12003:8080"
+        volumes:
+            - "./src/:/var/www/html"
 
     unitedctf-sysadmin-base:
         image: unitedctf-sysadmin-base
