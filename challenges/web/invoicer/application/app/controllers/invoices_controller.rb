@@ -8,7 +8,7 @@ class InvoicesController < ApplicationController
   def create
     if current_user.admin?
       flash[:info] = "#{ENV['SUPPORT_ACCOUNT_NAME']} can not create invoice."
-      render :new
+      redirect_to invoices_path
       return
     end
 
