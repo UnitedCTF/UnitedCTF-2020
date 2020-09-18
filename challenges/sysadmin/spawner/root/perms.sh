@@ -12,7 +12,9 @@ chmod 600 /etc/ssh/ssh_host*
 chown -R root:root /etc/sudoers.d
 chmod 440 /etc/sudoers.d/*
 
-sed -i 's/ENABLED=1/ENABLED=0/g' /etc/default/motd-news
+if [ -f "/etc/default/motd-news" ]; then
+    sed -i 's/ENABLED=1/ENABLED=0/g' /etc/default/motd-news
+fi
 chmod -x /etc/update-motd.d/*
 rm /etc/legal
 
