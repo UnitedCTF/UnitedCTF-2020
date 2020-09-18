@@ -1,5 +1,5 @@
 class HelpCenterController < ApplicationController
-  skip_before_action :authenticate!, only: [:index]
+  skip_before_action :authenticate!
   layout 'help_center'
 
   def home
