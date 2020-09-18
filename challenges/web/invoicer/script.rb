@@ -1,6 +1,6 @@
 require 'net/http'
 
-uri = URI('http://localhost:3000/')
+uri = URI('https://challenges.unitedctf.ca:12004')
 (0..9999).each do |number|
   token = number.to_s.rjust(4, '0')
   print "\r#{token}"
