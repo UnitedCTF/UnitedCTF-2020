@@ -1,0 +1,33 @@
+<h1>Register</h1>
+<p>Register now and start sending invoice to your customers.</p>
+
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div class="text-danger">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control", required: true, placeholder: "Name" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: "form-control", type: "email", required: true, placeholder: "Email" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.text_field :password, class: "form-control", type: "password", required: true, placeholder: "Password" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.text_field :password_confirmation, class: "form-control", type: "password", required: true, placeholder: "Password confirmation" %>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Register</button>
+<% end %>
