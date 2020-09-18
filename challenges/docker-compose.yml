@@ -155,7 +155,7 @@ services:
         ports:
             - "12001:80"
         volumes:
-            - "./web/Javascript/src/:/var/www/html"
+            - "./web/JavaScript/src/:/var/www/html"
 
     web-vous-pensez-passer-vos-intras:
         build: ./web/vous-pensez-passer-vos-intras
