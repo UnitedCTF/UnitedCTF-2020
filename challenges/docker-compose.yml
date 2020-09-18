@@ -277,6 +277,12 @@ services:
             - unitedctf-sysadmin-flag8
             - unitedctf-sysadmin-flag9
             - unitedctf-sysadmin-flag10
+    
+    invoicer:
+        build: ./web/invoicer
+        command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+        ports:
+            - "12004:3000"
 
 networks:
     sqli-net:
