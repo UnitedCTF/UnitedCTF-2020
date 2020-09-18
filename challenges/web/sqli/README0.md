@@ -1,5 +1,9 @@
 # Injection SQL #0: Toute la vérité
 
+> Web
+
+Author: @CycleOfTheAbsurd
+
 [SQL](https://en.wikipedia.org/wiki/SQL) est un langage pour interagir avec des bases de données relationnelles. C'est un langage extrêmement commmun que l'on retrouve entre autres dans une grand partie des applications web.
 
 Les vulnérabilités de type *injection* surviennent lorsqu'une donnée contrôlée par l'utilisateur est utilisée de manière insécuritaire dans un contexte où cette entrée peut causer une confusion et être interprétée comme une commande ou du code. Il s'agit du [#1 dans le Top 10 des vulnérabilités web selon l'OWASP](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection).
