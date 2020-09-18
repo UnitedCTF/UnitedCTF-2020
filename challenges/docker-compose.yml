@@ -2,49 +2,49 @@ version: "3.7"
 services:
     aes-client:
         build: ./crypto/aes-client
-        restart: on-failure
+        restart: unless-stopped
         ports:
             - 3000:3000
 
     aes-ctr:
         build: ./crypto/aes-ctr
-        restart: on-failure
+        restart: unless-stopped
         ports:
             - 3001:3000
 
     aes-ecb-cut-paste:
         build: ./crypto/aes-ecb-cut-paste
-        restart: on-failure
+        restart: unless-stopped
         ports:
             - 3002:3000
 
     aes-ecb-byte-per-byte:
         build: ./crypto/aes-ecb-byte-per-byte
-        restart: on-failure
+        restart: unless-stopped
         ports:
             - 3003:3000
 
     init-socket:
         build: ./programming/init-socket
-        restart: on-failure
+        restart: unless-stopped
         ports:
             - 3004:3000
 
     init-json:
         build: ./programming/init-json
-        restart: on-failure
+        restart: unless-stopped
         ports:
             - 3005:3000
 
     maze:
         build: ./programming/maze
-        restart: on-failure
+        restart: unless-stopped
         ports:
             - 3006:3000
 
     cmd-injection:
         build: ./web/cmd-injection
-        restart: on-failure
+        restart: unless-stopped
         ports:
             - 3007:5000
         ulimits:
@@ -52,6 +52,7 @@ services:
 
     la_molecule_pwn:
         build: ./pwning/la_molecule
+        restart: unless-stopped
         image: la_molecule_pwn
         volumes:
             - ./pwning/la_molecule/la_molecule:/home/molecule/la_molecule:ro
@@ -63,24 +64,25 @@ services:
 
     solve-math:
         build: ./programming/solve-math
-        restart: on-failure
+        restart: unless-stopped
         ports:
             - 4001:3000
 
     hash-breaker:
         build: ./programming/hash-breaker
-        restart: on-failure
+        restart: unless-stopped
         ports:
             - 4002:3000
 
     captcha-reader:
         build: ./programming/captcha-reader
-        restart: on-failure
+        restart: unless-stopped
         ports:
             - 4003:3000
 
     la_goutte_pwn:
         build: ./pwning/la_goutte
+        restart: unless-stopped
         image: la_goutte_pwn
         volumes:
             - ./pwning/la_goutte/la_goutte:/home/goutte/la_goutte:ro
@@ -92,6 +94,7 @@ services:
 
     le_ruisseau_pwn:
         build: ./pwning/le_ruisseau/
+        restart: unless-stopped
         image: le_ruisseau_pwn
         volumes:
             - ./pwning/le_ruisseau/le_ruisseau:/home/ruisseau/le_ruisseau:ro
@@ -101,6 +104,7 @@ services:
 
     le_lac_pwn:
         build: ./pwning/le_lac
+        restart: unless-stopped
         image: le_lac_pwn
         volumes:
             - ./pwning/le_lac/le_lac:/home/lac/le_lac:ro
@@ -110,21 +114,21 @@ services:
             - 17002:8888
         ulimits:
             nproc: 2048
-        restart: unless-stopped
 
     sqli_db:
         build: ./web/sqli/sqli_db
+        restart: unless-stopped
         env_file:
             - ./web/sqli/sqli_db/.env
             - ./web/sqli/sqli_db/db.env
         volumes:
             - ./web/sqli/sqli_db/init_sql:/init_sql:ro
-        restart: unless-stopped
         networks:
             - sqli-net
 
     sqli_web:
         build: ./web/sqli/sqli_web/
+        restart: unless-stopped
         depends_on:
             - sqli_db
         ports:
@@ -134,12 +138,12 @@ services:
         env_file: ./web/sqli/sqli_db/.env
         environment:
             DB_HOST: sqli_db
-        restart: unless-stopped
         networks:
             - sqli-net
 
     web-101:
         build: ./web/web-101
+        restart: unless-stopped
         ports:
             - "12000:80"
         volumes:
@@ -147,6 +151,7 @@ services:
 
     web-javascript:
         image: php:7.4.7-apache
+        restart: unless-stopped
         ports:
             - "12001:80"
         volumes:
@@ -154,6 +159,7 @@ services:
 
     web-vous-pensez-passer-vos-intras:
         build: ./web/vous-pensez-passer-vos-intras
+        restart: unless-stopped
         ports:
             - "12003:8080"
         volumes:
