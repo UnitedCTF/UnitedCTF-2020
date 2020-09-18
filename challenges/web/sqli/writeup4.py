@@ -3,7 +3,7 @@
 import requests
 from datetime import timedelta
 
-URL = "https://unitedctf.ca:18000/challenge4.php"
+URL = "https://challenges.unitedctf.ca:18000/challenge4.php"
 HEADERS = {}
 SLEEP_SECONDS = 0.3 # Sleep for 0.3 second. Adjust duration for your connection speed so you can differentiate responses.
 

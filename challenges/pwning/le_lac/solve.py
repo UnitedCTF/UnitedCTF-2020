@@ -5,7 +5,7 @@ LEN_BUFFER = 264 #Calculated using patterns in gef. could be automated
 from pwn import *
 
 context(arch = "amd64", os = "linux") #Challenge is on linux x64
-#conn = pwn.remote("unitedctf.ca", 17002) #connect to service
+#conn = pwn.remote("challenges.unitedctf.ca", 17002) #connect to service
 conn = remote("127.0.0.1", 17002)
 
 # parse buffer address

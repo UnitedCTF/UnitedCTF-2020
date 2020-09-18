@@ -12,7 +12,7 @@ Comme nous l'avons vu dans le précédent challenge, la _stack_ fonctionne en mo
 
 Défi: Voici un autre programme compilé vulnérable à un débordement de tampon. Tentez d'abord de comprendre son comportement et de l'exploiter localement. Si vous y parvenez, il affichera un flag censuré: "FLAG-XXXXXXXXXXXXXXXXXXXXXXXXXXXXX".
 
-Afin d'obtenir le vrai flag, vous devrez exploiter ce même programme via `unitedctf.ca:17001`
+Afin d'obtenir le vrai flag, vous devrez exploiter ce même programme via `challenges.unitedctf.ca:17001`
 
 _Note_: Nous avons désactivé certaines protections mémoires dont [PIE](https://en.wikipedia.org/wiki/Position-independent_code). Pour cette raison, les adresses de fonctions du binaire sont constantes. Elles ne changeront pas entre les différentes machines ni entre les exécutions.
 

@@ -12,7 +12,7 @@ __Il s'agit d'une technique d'exploitation et non d'une vulnérabilité.__ Il fa
 
 Défi: Voici un autre programme compilé vulnérable à un débordement de tampon. Vous devez exploiter cette faille pour exécuter un _shellcode_. Votre but est de lire le contenu du fichier `/flag`.
 
-Afin d'obtenir le flag, vous devrez exploiter ce même programme via `unitedctf.ca:17002`. Utilisez `netcat` pour vous y connecter
+Afin d'obtenir le flag, vous devrez exploiter ce même programme via `challenges.unitedctf.ca:17002`. Utilisez `netcat` pour vous y connecter
 
 _Note_: Pour ce challenge, nous avons désactivé certaines protections mémoires dont [NX](https://en.wikipedia.org/wiki/NX_bit#x86). Cette protection, qui est activée par défaut pour les programmes compilés avec des compilateurs Linux modernes, rend la _stack_ non-exécutable, ce qui protège spécifiquement contre les attaques par _shellcode_ dans la _stack_.
 

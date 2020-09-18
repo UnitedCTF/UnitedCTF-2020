@@ -8,7 +8,7 @@ Il y a une vulnérabilité qui affecte toujours trop de programmes encore aujour
 
 Le programme auquel vous devez vous connecter est vulnérable et vous pouvez le planter. Ce défi vise à vous instroduire aux défis suivants où vous irez jusqu'à lire des fichiers sur l'ordinateur compromis. Vous serez même capable d'exécuter des commandes via un shell (Sh ou Bash). Des explications techniques viendront avec les défis suivants.
 
-Utilisez `netcat` pour vous connecter à `unitedctf.ca:16999`. Pour les défis suivants, on vous suggère d'utiliser `pwntools` si vous connaissez Python. 
+Utilisez `netcat` pour vous connecter à `challenges.unitedctf.ca:16999`. Pour les défis suivants, on vous suggère d'utiliser `pwntools` si vous connaissez Python. 
 
 Vous obtiendrez un flag débutant par `FLAG-` lorsque vous le planterez avec succès.
 
