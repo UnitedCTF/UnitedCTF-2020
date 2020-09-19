@@ -33,7 +33,7 @@ class InvoicesController < ApplicationController
       # keyword = "%#{ActiveRecord::Base.sanitize_sql_like(params[:keyword])}%"
       keyword = "%#{params[:keyword]}%"
       @invoices = @invoices.where(
-        "(details LIKE '#{keyword}') OR (recipient_name LIKE '#{keyword}') OR (recipient_email LIKE '#{keyword})'"
+        "(details LIKE '#{keyword}') OR (recipient_name LIKE '#{keyword}') OR (recipient_email LIKE '#{keyword}')"
       )
     end
 
