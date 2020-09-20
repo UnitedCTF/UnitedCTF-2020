@@ -55,21 +55,29 @@ class TaskHandler(socketserver.BaseRequestHandler):
 
 			# start timer and send challenge
 			start_time = time.time()
+			# send size, then base64-encoded image
+			client.sendall(str(len(newimg)).encode('ascii') + b"\n")
 			client.sendall(newimg + b"\n")
+			# receive answer
 			answer = client.recv(1024).decode().strip()
 			end_time = time.time()
 
 			print("iterations " + str(i) + " sur " + str(tries))
 
 			if end_time - start_time >= 3.0:
-				client.sendall("Trop lent!".encode('utf-8'))
+				troplent = "Trop lent!"
+				client.sendall(str(len(troplent)).encode() + b"\n")
+				client.sendall(troplent.encode('utf-8') + b"\n")
 				break
 			elif answer == rndstring:
 				if i == tries:
-					client.sendall(flag.encode())
+					client.sendall(str(len(flag)).encode() + b"\n")
+					client.sendall(flag.encode() + b"\n")
 					break
 			else:
-				client.sendall("Mauvaise réponse".encode('utf-8'))
+				mauvaise = "Mauvaise réponse"
+				client.sendall(str(len(mauvaise)).encode() + b"\n")
+				client.sendall(mauvaise.encode('utf-8') + b"\n")
 				break
 
 		print("Finished")

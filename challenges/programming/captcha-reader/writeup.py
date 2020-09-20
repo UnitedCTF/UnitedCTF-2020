@@ -14,14 +14,20 @@ def decode_img(msg):
 	return img
 
 def recvall(sock):
-	BUFF_SIZE = 1024
 	data = bytearray()
+	length = 0
 	while True:
-#		print("[+] recv")
-		packet = sock.recv(BUFF_SIZE)
-#		print("[+] piece received: " + str(len(packet)))
-		data.extend(packet)
-		if len(packet) < BUFF_SIZE:
+		packet = sock.recv()
+		# check for the length header
+		if length == 0 and len(a := packet.split(b'\n')) == 2:
+			# expected size of PNG is in this packet
+			length = int(a[0])
+			print("[+] found length header: " + str(length))
+			data.extend(a[1])
+		else:
+			data.extend(packet)
+
+		if len(data) >= length:
 			print("[+] pieces all received")
 			break
 	return data
@@ -52,7 +58,7 @@ while True:
 
 	x = requests.post("http://api.ocr.space/parse/image", {'apikey': 'f3fcac1ce988957', 'base64Image' : 'data:image/png;base64,' + newimg})
 
-	print(x.content.decode())
+#	print(x.content.decode())
 
 	if "Timed out waiting for results" in x.content.decode():
 		print("[-] Timed out on API")
