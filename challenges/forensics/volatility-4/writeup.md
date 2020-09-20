@@ -15,4 +15,4 @@ Avec cette addresse, nous pouvons utiliser `dumpfiles` pour récupérer le fichi
 volatility dumpfiles -Q 0x09faa028 -f /path/to/volatile_mem.dmp -D /output/path/for/files/
 ```
 
-On obtient un fichier RTF qu'on peut ouvrir avec word ou un éditeur de texte pour voir le flag: `FLAG-L3S_.RTF_R3s7eNt`
+On obtient un fichier RTF qu'on peut ouvrir avec word ou un éditeur de texte pour voir le flag: `79YNkIqsSFRBDOLtLxzwPUHcnzEoiKC2ALlUNJVvEqUjsIbsKO4f0Wc1i471kWAuAM1RqsfcW1c`
