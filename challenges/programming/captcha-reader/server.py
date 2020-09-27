@@ -15,7 +15,7 @@ for i in range(48, 123):
 	if i >= 48 and i <= 57 or i >= 65 and i <= 90 or i >= 97 and i <= 122:
 		sequence.append(chr(i))
 
-# ceux qui portes à confusion sont enlevés (dépend trop de la qualité d'OCR de chaque joueur)
+# ceux qui portent à confusion sont enlevés (dépend trop de la qualité d'OCR de chaque joueur)
 sequence.remove('l')
 sequence.remove('1')
 sequence.remove('i')
